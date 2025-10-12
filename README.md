@@ -2,6 +2,17 @@
 
 Ce projet implémente un pipeline de recherche sémantique (RAG) utilisant ChromaDB et SentenceTransformers pour indexer et interroger des documents juridiques.
 
+> 🚀 **Nouveau ?** Consultez le [Guide de démarrage rapide](QUICKSTART.md)
+
+## 🎯 Fonctionnalités
+
+✅ **Conversion PDF → TXT** : Extrait automatiquement le texte de vos PDFs  
+✅ **Indexation intelligente** : Découpe et indexe vos documents avec des embeddings  
+✅ **Recherche sémantique** : Trouve les passages pertinents même sans mots-clés exacts  
+✅ **Affichage élégant** : Résultats formatés avec scores de pertinence  
+✅ **Évite les doublons** : N'indexe pas deux fois le même contenu  
+✅ **Multiple modes** : Interactif ou ligne de commande
+
 ## 📋 Prérequis
 
 - Python 3.8 ou supérieur
@@ -42,17 +53,38 @@ python traitement.py
 
 ```
 formation-ai-/
-├── traitement.py          # Script principal
+├── traitement.py          # Script principal de recherche
+├── pdf_to_txt.py         # Script de conversion PDF → TXT
 ├── requirements.txt       # Dépendances Python
 ├── Makefile              # Commandes d'automatisation
 ├── README.md             # Documentation
-├── clean_data/           # Dossier contenant les fichiers texte à indexer
+├── raw_pdfs/             # Dossier pour les PDFs sources (à créer)
+├── clean_data/           # Dossier contenant les fichiers texte indexés
 │   └── law_text2.txt
 ├── chroma_db/            # Base de données vectorielle (créée automatiquement)
 └── venv/                 # Environnement virtuel Python
 ```
 
 ## 💡 Utilisation
+
+### Étape 1 : Convertir les PDFs en TXT (optionnel)
+
+Si vous avez des fichiers PDF à indexer :
+
+1. Placez vos fichiers PDF dans le dossier `raw_pdfs/`
+2. Lancez la conversion :
+
+```bash
+make convert-pdf
+```
+
+Le script `pdf_to_txt.py` :
+- ✅ Lit tous les PDFs du dossier `raw_pdfs/`
+- ✅ Extrait le texte de chaque page
+- ✅ Crée des fichiers TXT dans `clean_data/`
+- ✅ Affiche des statistiques détaillées
+
+### Étape 2 : Recherche sémantique
 
 Le script `traitement.py` :
 1. Indexe automatiquement tous les fichiers `.txt` du dossier `clean_data/`
@@ -86,6 +118,7 @@ make query QUERY="votre question ici"
 ## 🔧 Commandes Make disponibles
 
 - `make install` - Installation complète avec environnement virtuel
+- `make convert-pdf` - Convertit les PDFs en TXT (dossier raw_pdfs/)
 - `make run` - Exécution du script en mode interactif
 - `make query QUERY="..."` - Recherche avec une requête spécifique
 - `make clean` - Nettoyage de l'environnement et fichiers temporaires
@@ -97,6 +130,7 @@ make query QUERY="votre question ici"
 - **chromadb** : Base de données vectorielle
 - **sentence-transformers** : Génération d'embeddings
 - **numpy** : Calculs numériques
+- **pypdf** : Extraction de texte depuis des PDFs
 
 ## 🎯 Exemples de recherche
 
@@ -121,11 +155,44 @@ Les résultats affichent :
 - 🟡 Score jaune (40-69%) : Moyennement pertinent
 - 🔴 Score rouge (<40%) : Faiblement pertinent
 
-## 🔄 Réinitialiser la base de données
+## 🔄 Workflow complet
+
+### Scénario : Indexer et rechercher dans des documents PDF
 
 ```bash
+# 1. Installation
+make install
+
+# 2. Placer vos PDFs dans le dossier raw_pdfs/
+# (Glissez-déposez vos fichiers PDF dans raw_pdfs/)
+
+# 3. Convertir les PDFs en TXT
+make convert-pdf
+
+# 4. Rechercher dans vos documents
+make run
+# Ou avec une requête directe :
+make query QUERY="votre question ici"
+
+# 5. (Optionnel) Réinitialiser la base de données
 make reset-db
 ```
 
-Puis relancez le script pour réindexer les documents.
+### Workflow de mise à jour
+
+Quand vous ajoutez de nouveaux documents :
+
+```bash
+# Ajouter nouveaux PDFs dans raw_pdfs/
+make convert-pdf  # Convertir les nouveaux PDFs
+make run          # Les nouveaux TXT seront automatiquement indexés
+```
+
+Le système évite les doublons automatiquement !
+
+---
+
+## 📚 Documentation supplémentaire
+
+Pour des exemples détaillés et des cas d'usage, consultez [EXEMPLES.md](EXEMPLES.md).
 

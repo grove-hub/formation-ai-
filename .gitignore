@@ -12,6 +12,10 @@ __pycache__/
 # Base de données ChromaDB
 chroma_db/
 
+# Données
+raw_pdfs/
+clean_data/*.txt
+
 # IDE
 .vscode/
 .idea/

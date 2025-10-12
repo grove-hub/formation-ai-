@@ -1,4 +1,4 @@
-.PHONY: install run clean help
+.PHONY: install run clean help convert-pdf
 
 # Variables
 PYTHON := python3
@@ -9,6 +9,7 @@ VENV_BIN := $(VENV)/bin
 help:
 	@echo "📋 Commandes disponibles :"
 	@echo "  make install           - Crée un environnement virtuel et installe les dépendances"
+	@echo "  make convert-pdf       - Convertit les PDFs en TXT (dossier raw_pdfs/)"
 	@echo "  make run               - Execute le script en mode interactif"
 	@echo "  make query QUERY=\"...\" - Execute une recherche avec une requête spécifique"
 	@echo "  make clean             - Supprime l'environnement virtuel et les fichiers temporaires"
@@ -30,6 +31,10 @@ run:
 query:
 	@echo "🚀 Exécution de la recherche..."
 	$(VENV_BIN)/python traitement.py $(QUERY)
+
+convert-pdf:
+	@echo "📄 Conversion des PDFs en TXT..."
+	$(VENV_BIN)/python pdf_to_txt.py
 
 clean:
 	@echo "🧹 Nettoyage..."
