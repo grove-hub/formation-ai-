@@ -4,7 +4,7 @@ import glob
 import os
 
 class RetrievalPipeline:
-    def __init__(self, db_path="project/chroma_db"):
+    def __init__(self, db_path="chroma_db"):
         # Initialize the SentenceTransformer model for text embeddings
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
         # Create or connect to a persistent Chroma database at the given path
@@ -15,7 +15,7 @@ class RetrievalPipeline:
     def chunking(self, text, chunk_size=500, overlap=50):
         # Split long text into smaller overlapping chunks for better embedding quality
         chunks = []
-        start = 0
+        start = 0©
         while start < len(text):
             end = start + chunk_size
             chunks.append(text[start:end])
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     retrieval_pipeline = RetrievalPipeline()
     
     # Loop over all text files in the 'clean_data' directory and index them
-    for file_path in glob.glob("project/clean_data/*.txt"):
+    for file_path in glob.glob("clean_data/*.txt"):
         retrieval_pipeline.index_text(file_path)
 
     # Define a search query
