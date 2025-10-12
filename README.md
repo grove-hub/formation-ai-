@@ -60,10 +60,34 @@ Le script `traitement.py` :
 3. Génère des embeddings pour chaque chunk
 4. Permet de faire des recherches sémantiques
 
+### Méthodes de recherche :
+
+**1. Mode interactif (par défaut)**
+```bash
+make run
+# Le système vous demandera de saisir votre question
+```
+
+**2. Avec une requête en ligne de commande**
+```bash
+python traitement.py "quelle autorité est responsable de la gestion des déchets ?"
+```
+
+**3. Avec le Makefile**
+```bash
+make query QUERY="votre question ici"
+```
+
+### Validation automatique :
+- ✅ Le système vérifie que la requête n'est pas vide
+- ✅ Affiche un message d'erreur clair si la requête est invalide
+- ✅ Affiche les 3 meilleurs résultats avec un score de pertinence
+
 ## 🔧 Commandes Make disponibles
 
 - `make install` - Installation complète avec environnement virtuel
-- `make run` - Exécution du script
+- `make run` - Exécution du script en mode interactif
+- `make query QUERY="..."` - Recherche avec une requête spécifique
 - `make clean` - Nettoyage de l'environnement et fichiers temporaires
 - `make reset-db` - Réinitialisation de la base de données
 - `make help` - Affiche l'aide
@@ -74,14 +98,28 @@ Le script `traitement.py` :
 - **sentence-transformers** : Génération d'embeddings
 - **numpy** : Calculs numériques
 
-## 🎯 Exemple de recherche
+## 🎯 Exemples de recherche
 
-Le script effectue une recherche exemple :
-```python
-query = "a competent authority can take a decision"
-result = retrieval_pipeline.query_search(query)
-print(result)
+**Exemple 1 : Mode interactif**
+```bash
+make run
+# Puis saisir : "quelle autorité est responsable de la gestion des déchets ?"
 ```
+
+**Exemple 2 : Ligne de commande**
+```bash
+make query QUERY="qui est responsable de l'application des sanctions ?"
+```
+
+**Exemple 3 : Directement avec Python**
+```bash
+python traitement.py "quelles sont les obligations des États membres ?"
+```
+
+Les résultats affichent :
+- 🟢 Score vert (≥70%) : Très pertinent
+- 🟡 Score jaune (40-69%) : Moyennement pertinent
+- 🔴 Score rouge (<40%) : Faiblement pertinent
 
 ## 🔄 Réinitialiser la base de données
 

@@ -8,10 +8,11 @@ VENV_BIN := $(VENV)/bin
 
 help:
 	@echo "📋 Commandes disponibles :"
-	@echo "  make install    - Crée un environnement virtuel et installe les dépendances"
-	@echo "  make run        - Execute le script traitement.py"
-	@echo "  make clean      - Supprime l'environnement virtuel et les fichiers temporaires"
-	@echo "  make reset-db   - Supprime la base de données ChromaDB"
+	@echo "  make install           - Crée un environnement virtuel et installe les dépendances"
+	@echo "  make run               - Execute le script en mode interactif"
+	@echo "  make query QUERY=\"...\" - Execute une recherche avec une requête spécifique"
+	@echo "  make clean             - Supprime l'environnement virtuel et les fichiers temporaires"
+	@echo "  make reset-db          - Supprime la base de données ChromaDB"
 
 install:
 	@echo "🔧 Création de l'environnement virtuel..."
@@ -23,8 +24,12 @@ install:
 	@echo "💡 Pour activer l'environnement : source $(VENV_BIN)/activate"
 
 run:
-	@echo "🚀 Exécution du script..."
+	@echo "🚀 Exécution du script en mode interactif..."
 	$(VENV_BIN)/python traitement.py
+
+query:
+	@echo "🚀 Exécution de la recherche..."
+	$(VENV_BIN)/python traitement.py $(QUERY)
 
 clean:
 	@echo "🧹 Nettoyage..."

@@ -2,6 +2,7 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 import glob
 import os
+import sys
 
 class RetrievalPipeline:
     def __init__(self, db_path="chroma_db"):
@@ -60,6 +61,10 @@ class RetrievalPipeline:
         print(f"{new_chunks} New chunk indexed from {file_path}")
     
     def query_search(self, query_text, n_result=1):
+        # Vérifier que la requête n'est pas vide
+        if not query_text or query_text.strip() == "":
+            return None
+        
         # Encode the query text into an embedding vector
         query_embedding = self.model.encode(query_text)
         # Search the Chroma collection for the most similar chunks
@@ -72,6 +77,24 @@ class RetrievalPipeline:
     
     def display_results(self, query, results):
         """Affiche les résultats de recherche de manière claire et formatée"""
+        # Vérifier si les résultats sont valides
+        if results is None:
+            print("\n" + "="*100)
+            print(" ⚠️  ERREUR ".center(100))
+            print("="*100)
+            print("\n❌ La requête est vide ! Veuillez saisir une question ou des mots-clés.\n")
+            print("="*100 + "\n")
+            return
+        
+        if not results['documents'][0]:
+            print("\n" + "="*100)
+            print(" 🔍  RECHERCHE SÉMANTIQUE - AUCUN RÉSULTAT ".center(100))
+            print("="*100)
+            print(f"\n💬 Requête : \"{query}\"")
+            print(f"\n❌ Aucun résultat trouvé pour cette requête.\n")
+            print("="*100 + "\n")
+            return
+        
         print("\n" + "="*100)
         print(" 🔍  RECHERCHE SÉMANTIQUE - RÉSULTATS ".center(100))
         print("="*100)
@@ -130,8 +153,17 @@ if __name__ == "__main__":
     for file_path in glob.glob("clean_data/*.txt"):
         retrieval_pipeline.index_text(file_path)
 
-    # Define a search query
-    query = "quelle autorité est responsable de la gestion des déchets dangereux ?"
+    # Define a search query (from command line or default)
+    if len(sys.argv) > 1:
+        # Récupérer la requête depuis les arguments de la ligne de commande
+        query = " ".join(sys.argv[1:])
+    else:
+        # Demander à l'utilisateur de saisir une requête
+        print("\n" + "="*100)
+        print(" 💬  SAISISSEZ VOTRE REQUÊTE ".center(100))
+        print("="*100)
+        query = input("\n🔍 Votre question : ").strip()
+    
     # Run the query against the Chroma collection (récupérer top 3 résultats)
     result = retrieval_pipeline.query_search(query, n_result=3)
     # Display the search results in a clear format
