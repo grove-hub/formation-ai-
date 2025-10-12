@@ -69,18 +69,70 @@ class RetrievalPipeline:
         )
         # Return the query results
         return result
+    
+    def display_results(self, query, results):
+        """Affiche les résultats de recherche de manière claire et formatée"""
+        print("\n" + "="*100)
+        print(" 🔍  RECHERCHE SÉMANTIQUE - RÉSULTATS ".center(100))
+        print("="*100)
+        print(f"\n💬 Requête : \"{query}\"")
+        print(f"📊 Nombre de résultats trouvés : {len(results['documents'][0])}")
+        print("\n" + "="*100 + "\n")
+        
+        # Parcourir tous les résultats
+        for i, (doc, metadata, distance) in enumerate(zip(
+            results['documents'][0],
+            results['metadatas'][0],
+            results['distances'][0]
+        ), 1):
+            # Calculer le score de similarité (plus c'est proche de 100%, mieux c'est)
+            similarity_score = max(0, (2 - distance) / 2 * 100)
+            
+            # Déterminer l'emoji en fonction du score
+            if similarity_score >= 70:
+                score_emoji = "🟢"
+            elif similarity_score >= 40:
+                score_emoji = "🟡"
+            else:
+                score_emoji = "🔴"
+            
+            # Nettoyer le texte pour un meilleur affichage
+            cleaned_doc = doc.replace('\\n', ' ').replace('\n', ' ')  # Remplace les retours à la ligne
+            cleaned_doc = ' '.join(cleaned_doc.split())  # Enlève les espaces multiples
+            
+            print(f"╔═ 📄 RÉSULTAT #{i} {'═'*85}")
+            print(f"║")
+            print(f"║  📂 Source      : {metadata.get('source', 'N/A')}")
+            print(f"║  {score_emoji} Pertinence  : {similarity_score:.1f}%")
+            print(f"║")
+            print(f"║  📝 Extrait :")
+            print(f"║  {'-'*96}")
+            # Wrapper le texte pour un affichage propre (75 caractères par ligne)
+            words = cleaned_doc.split()
+            line = "║  "
+            for word in words:
+                if len(line) + len(word) + 1 > 98:
+                    print(line)
+                    line = "║  " + word + " "
+                else:
+                    line += word + " "
+            if line.strip() != "║":
+                print(line)
+            print(f"║")
+            print(f"╚{'═'*98}\n")
 
 if __name__ == "__main__":
     # Initialize the retrieval pipeline
     retrieval_pipeline = RetrievalPipeline()
     
+    print("🔄 Indexation des documents...")
     # Loop over all text files in the 'clean_data' directory and index them
     for file_path in glob.glob("clean_data/*.txt"):
         retrieval_pipeline.index_text(file_path)
 
     # Define a search query
-    query = "a competent authority can take a decision"
-    # Run the query against the Chroma collection
-    result = retrieval_pipeline.query_search(query)
-    # Print the search results
-    print(result)
+    query = "quelle autorité est responsable de la gestion des déchets dangereux ?"
+    # Run the query against the Chroma collection (récupérer top 3 résultats)
+    result = retrieval_pipeline.query_search(query, n_result=3)
+    # Display the search results in a clear format
+    retrieval_pipeline.display_results(query, result)
