@@ -15,7 +15,7 @@ class RetrievalPipeline:
     def chunking(self, text, chunk_size=500, overlap=50):
         # Split long text into smaller overlapping chunks for better embedding quality
         chunks = []
-        start = 0©
+        start = 0
         while start < len(text):
             end = start + chunk_size
             chunks.append(text[start:end])
