@@ -2,11 +2,10 @@
 Script de conversion PDF vers TXT
 Convertit tous les fichiers PDF du dossier raw_pdfs/ en fichiers TXT dans clean_data/
 """
-from pypdf import PdfReader
-import glob
+from pypdf import PdfReader 
 import os
 
-def pdf_to_txt(pdf_folder="raw_pdfs", output_folder="clean_data"):
+def pdf_to_txt(pdf_folder="project\\raw_pdfs", output_folder="project\\clean_data"):
     """
     Convertit tous les PDFs d'un dossier en fichiers TXT
     
@@ -14,11 +13,9 @@ def pdf_to_txt(pdf_folder="raw_pdfs", output_folder="clean_data"):
         pdf_folder: Dossier contenant les PDFs à convertir
         output_folder: Dossier de destination pour les fichiers TXT
     """
-    # Créer le dossier de sortie s'il n'existe pas
-    os.makedirs(output_folder, exist_ok=True)
     
     # Récupérer tous les fichiers PDF
-    pdf_files = glob.glob(f"{pdf_folder}/*.pdf")
+    pdf_files = os.listdir(pdf_folder)
     
     if not pdf_files:
         print(f"⚠️  Aucun fichier PDF trouvé dans le dossier '{pdf_folder}/'")
@@ -38,6 +35,7 @@ def pdf_to_txt(pdf_folder="raw_pdfs", output_folder="clean_data"):
     
     # Convertir chaque PDF
     for i, pdf_path in enumerate(pdf_files, 1):
+        pdf_path = os.path.join(pdf_folder, pdf_path)
         pdf_name = os.path.basename(pdf_path)
         txt_name = pdf_name.replace('.pdf', '.txt')
         output_path = os.path.join(output_folder, txt_name)
@@ -81,10 +79,10 @@ def pdf_to_txt(pdf_folder="raw_pdfs", output_folder="clean_data"):
 
 if __name__ == "__main__":
     # Créer le dossier raw_pdfs s'il n'existe pas
-    if not os.path.exists("raw_pdfs"):
-        os.makedirs("raw_pdfs")
-        print("📁 Dossier 'raw_pdfs/' créé.")
-        print("💡 Placez vos fichiers PDF dans ce dossier et relancez le script.\n")
+    # if not os.path.exists("/project/raw_pdfs"):
+    #     os.makedirs("raw_pdfs")
+    #     print("📁 Dossier 'raw_pdfs/' créé.")
+    #     print("💡 Placez vos fichiers PDF dans ce dossier et relancez le script.\n")
     
     # Lancer la conversion
     pdf_to_txt()

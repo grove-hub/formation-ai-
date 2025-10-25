@@ -1,0 +1,146 @@
+{
+    "obligations_tri_gestion": {
+        "weight": 0.8,
+        "keywords": [
+            "obligation de tri", "dechets non menagers", "dechets professionnels",
+            "dechets residuels", "collecte selective", "flux a trier",
+            "poubelles separees", "sac", "conteneur", "ilot de tri",
+            "ne pas melanger", "tri a la source", "interdiction melange",
+            "inspection", "controle", "obligation legale"
+        ]
+    },
+    "tracabilite_preuves": {
+        "weight": 1.0,
+        "keywords": [
+            "preuve de bonne gestion", "document de tracabilite", "registre des dechets",
+            "cmr", "code dechet", "code cer", "code europeen des dechets",
+            "r d code de traitement", "quantites", "destination finale",
+            "contrat de collecte", "transporteur enregistre", "collecteur enregistre",
+            "conserver 5 ans"
+        ]
+    },
+    "collecte_stockage": {
+        "weight": 1.0,
+        "keywords": [
+            "collecteur homologue", "installation autorisee", "recypark", "zone de stockage",
+            "stockage separe", "zone dediee", "etancheite", "securite", "etiquetage",
+            "frequence denlevement", "location de conteneurs"
+        ]
+    },
+    "pmc": {
+        "weight": 1.0,
+        "keywords": [
+            "pmc", "sac bleu", "bouteille plastique", "canette", "brique a boisson",
+            "emballages menagers", "fost plus"
+        ]
+    },
+    "papier_carton": {
+        "weight": 1.0,
+        "keywords": [
+            "papier", "carton", "papier de bureau", "archives", "impression",
+            "papier recycle", "fente ouverture", "jaune code couleur"
+        ]
+    },
+    "verre": {
+        "weight": 1.0,
+        "keywords": ["verre", "bouteille en verre", "bocal", "consigne", "apport verre"]
+    },
+    "biodechets_alimentaires": {
+        "weight": 1.5,
+        "keywords": [
+            "biodechets", "dechets alimentaires", "organique", "restes alimentaires",
+            "cantine", "dechets de cuisine", "collecte biodechets", "compostage autorise"
+        ]
+    },
+    "plastiques_flexibles_films_pse": {
+        "weight": 1.3,
+        "keywords": [
+            "film plastique", "stretch", "pallet wrap", "frigolite", "pse", "eps",
+            "cerclage", "sac prime", "prime sac"
+        ]
+    },
+    "plastiques_rigides": {
+        "weight": 1.3,
+        "keywords": ["plastiques rigides", "bacs", "seaux", "caisses", "pp", "pehd", "pet rigide"]
+    },
+    "bois": {
+        "weight": 1.2,
+        "keywords": ["bois", "palette", "cagette", "menuiserie", "mobilier bois"]
+    },
+    "metaux": {
+        "weight": 1.2,
+        "keywords": ["metal", "acier", "aluminium", "ferraille", "canette metal"]
+    },
+    "textiles": {
+        "weight": 2.0,
+        "keywords": ["textile", "vetements", "linge", "reemploi textile", "tri textile", "textiles"]
+    },
+    "dechets_verts": {
+        "weight": 1.2,
+        "keywords": ["dechets verts", "feuilles", "branches", "tonte", "broyat", "jardin"]
+    },
+    "inerte_chantier": {
+        "weight": 1.5,
+        "keywords": ["inerte", "gravats", "beton", "brique", "platre", "terre", "chantier", "renovation", "demolition"]
+    },
+    "deee": {
+        "weight": 2.0,
+        "keywords": ["deee", "equipement electrique", "electronique", "ordinateur", "frigo", "luminaires", "panneau photovoltaïque", "recupel"]
+    },
+    "piles_accumulateurs": {
+        "weight": 2.0,
+        "keywords": ["pile", "batterie", "accumulateur", "bebat", "collecte piles"]
+    },
+    "huiles_usagees_non_alimentaires": {
+        "weight": 2.0,
+        "keywords": ["huile usagee", "lubrifiant", "huile moteur", "valorlub", "emulsion huileuse"]
+    },
+    "pneus": {
+        "weight": 2.0,
+        "keywords": ["pneu", "pneus uses", "recytyre"]
+    },
+    "vehicules_hors_d_usage_vhu": {
+        "weight": 2.0,
+        "keywords": ["vehicule hors dusage", "vhu", "demantelement", "febelauto"]
+    },
+    "emballages_industriels_commerciaux": {
+        "weight": 1.8,
+        "keywords": ["emballages industriels", "emballages commerciaux", "declaration emballages", "valipac", "conteneur tri", "prime de demarrage", "prime de recyclage", "prime sac", "prime conteneurs"]
+    },
+    "emballages_menagers_en_entreprise": {
+        "weight": 1.3,
+        "keywords": ["emballages menagers", "pmc en entreprise", "fost plus", "prime de bienvenue"]
+    },
+    "matelas": {
+        "weight": 2.0,
+        "keywords": ["matelas", "surmatelas", "valumat", "demantelement matelas", "mousse", "ressorts", "textile matelas", "stockage au sec"]
+    },
+    "medicaments_dechets_de_soins_non_risque": {
+        "weight": 2.0,
+        "keywords": ["medicament perime", "pharmaceutique", "pharma be", "retour medicament"]
+    },
+    "dangereux": {
+        "weight": 2.0,
+        "keywords": ["dechet dangereux", "toxique", "corrosif", "inflammable", "explosif", "solvant", "peinture", "acide", "base", "aerosol", "pcb", "stockage specifique", "adr"]
+    },
+    "dechets_de_soins_a_risque": {
+        "weight": 2.0,
+        "keywords": ["dechets de soins", "aiguille", "seringue", "infectieux", "hopital", "dasri", "conteneur piquant coupant", "autoclavage"]
+    },
+    "usage_unique_interdictions_et_limitations": {
+        "weight": 1.5,
+        "keywords": ["plastique a usage unique", "gobelet", "assiette", "couvert", "paille", "touillette", "capsule cafe", "bioplastique", "eps interdit", "etiquetage plastique", "taux de plastique recycle en bouteilles", "eau du reseau", "vaisselle reutilisable", "interdiction entites publiques"]
+    },
+    "prevention_reemploi_durabilite_achats": {
+        "weight": 1.8,
+        "keywords": ["prevention des dechets", "reemploi", "seconde vie", "achat durable", "clause environnementale", "economie circulaire", "label entreprise ecodynamique", "indice de reparabilite", "buysmart", "marches publics durables"]
+    },
+    "proprete_publique_et_depots_sauvages": {
+        "weight": 1.2,
+        "keywords": ["proprete publique", "depot sauvage", "obligation abords", "poubelles visibles", "cendriers exterieurs", "horeca abords"]
+    },
+    "flux_rep_en_extension": {
+        "weight": 2.0,
+        "keywords": ["lingettes humides", "ballons de baudruche", "engins de peche contenant du plastique", "megots", "modalites a precis"]
+    }
+}
