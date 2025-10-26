@@ -1,6 +1,5 @@
 import chromadb 
 from sentence_transformers import SentenceTransformer
-import glob
 import os
 import sys
 import json
@@ -48,6 +47,11 @@ class RetrievalPipeline:
             chunks.append(text[start:end])
             # Déplace la fenêtre vers l’avant, en gardant un chevauchement pour préserver le contexte
             start += chunk_size - overlap
+        # verifie si les chunk ne sont pas trop petit et donc sens context
+        for i, chunk in enumerate(chunks):
+            if len(chunk) > 300:
+                chunks.pop(i)
+
         return chunks
 
     def index_text(self, file_path):
@@ -147,13 +151,12 @@ class RetrievalPipeline:
         print("\n" + "="*100 + "\n")
         
         # Parcourir tous les résultats
-        for i, (doc, metadata, distance) in enumerate(zip(
-            results['documents'][0],
-            results['metadatas'][0],
-            results['distances'][0]
-        ), 1):
+        for i in range(1, 4):
+            doc = results["documents"][0]
+            metadata = results["metadatas"][0]
+            distance = results["distances"][0]
             # Calculer le score de similarité (plus c’est proche de 100 %, mieux c’est)
-            similarity_score = max(0, (2 - distance) / 2 * 100)
+            similarity_score = max(0, (2 - distance[i]) / 2 * 100)
             
             # Déterminer l’emoji en fonction du score
             if similarity_score >= 70:
@@ -164,12 +167,12 @@ class RetrievalPipeline:
                 score_emoji = "🔴"
             
             # Nettoyer le texte pour un meilleur affichage
-            cleaned_doc = doc.replace('\\n', ' ').replace('\n', ' ')  # Remplace les retours à la ligne
+            cleaned_doc = doc[i].replace('\\n', ' ').replace('\n', ' ')  # Remplace les retours à la ligne
             cleaned_doc = ' '.join(cleaned_doc.split())  # Enlève les espaces multiples
             
             print(f"╔═ 📄 RÉSULTAT #{i} {'═'*85}")
             print(f"║")
-            print(f"║  📂 Source      : {metadata.get('source', 'categorie')}")
+            print(f"║  📂 Source      : {metadata[i].get('source', 'N/A')}")
             print(f"║  {score_emoji} Pertinence  : {similarity_score:.1f}%")
             print(f"║")
             print(f"║  📝 Extrait :")
@@ -193,8 +196,12 @@ if __name__ == "__main__":
     retrieval_pipeline = RetrievalPipeline()
     
     print("🔄 Indexation des documents...")
+
     # Parcourt tous les fichiers texte dans le dossier 'clean_data' et les indexe
-    for file_path in glob.glob("project/clean_data/*.txt"):
+    file_list = os.listdir("project\clean_data")
+
+    for file_path in file_list:
+        file_path = os.path.join("project\clean_data", file_path)
         retrieval_pipeline.index_text(file_path)
 
     # Définit une requête de recherche (depuis la ligne de commande ou par défaut)
