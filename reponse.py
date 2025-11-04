@@ -2,6 +2,8 @@ import requests
 import json
 from traitement import RetrievalPipeline
 
+# envoye et retourne une reponse du model mistral a la question pose par l utilisateur
+# en moyenne 2 a 3min pour chaque réponse
 class Generation:
     def __init__(self):
         # url du serveur d'ollama sur docker
@@ -42,15 +44,16 @@ class Generation:
 
                 Ta réponse finale :
         """
-        
+        #question et model utiliser
         data = {
             "model":"mistral",
             "prompt": prompt
         }
-
+        # récupere la reponse du serveur
         with requests.post(self.url, json=data, stream=True) as r:
             output = ""
-
+            # la reponse du serveur est 'casse' en plusieru ligne json
+            # parcour chaque ligne pour récuprer le texte
             for line in r.iter_lines():
                 if line:
                     chunk = json.loads(line.decode("utf-8"))
@@ -58,12 +61,15 @@ class Generation:
                         output += chunk["response"]
                     if chunk.get("done", False):
                         break
-        return output
+        # la reponse
+
+        return output, results
 
 if __name__ == "__main__":
+    # question de l utilisateur
     query_text = input("Question: ")
-
+    # function pour envoyer et recupere la reponse
     generation = Generation()
-    output = generation.prompt_augmentation(query_text=query_text)
-
-    print(f"Réponse: {output}")
+    output, result = generation.prompt_augmentation(query_text=query_text)
+    # reponse
+    print(f"\n Réponse: {output}")
