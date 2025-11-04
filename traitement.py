@@ -1,24 +1,36 @@
 import chromadb 
 from sentence_transformers import SentenceTransformer
 import os
+from pathlib import Path
 import sys
 import json
 import re
 
 class RetrievalPipeline:
-    def __init__(self, db_path="project/chroma_db"):
+    def __init__(self):
         # Initialise le modèle SentenceTransformer pour les embeddings de texte
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
+
+        #base du projet ou ce fichier ce trouve
+        self.base_dir = Path(__file__).resolve().parent
+        self.project_root = self.base_dir
+
+        # chemin pour le dossier chroma
+        self.db_path = (self.project_root / "chroma_db").resolve()
         # Crée ou connecte une base de données Chroma persistante au chemin donné
-        self.chroma_client = chromadb.PersistentClient(db_path)
+        self.chroma_client = chromadb.PersistentClient(path=str(self.db_path))
         # Récupère ou crée une collection dans la base appelée "law_text"
         self.collection = self.chroma_client.get_or_create_collection(name="law_text")
+
+        #chemin vers clean_data
+        self.data_dir = (self.project_root / "clean_data").resolve()
     
     def find_category(self, text):
         # trouve la categorie aproximatif
         
+        json_path = (self.project_root / "base_dechets.json").resolve()
         # recupere le dic dans base_dechets.json
-        with open("project\\base_dechets.json", mode="r", encoding="utf-8") as f:
+        with open(json_path, mode="r", encoding="utf-8") as f:
             category = json.load(f)
         # cree un dic avec les meme cle que l original
         dominent_category = {key:0 for key in category}
@@ -49,12 +61,13 @@ class RetrievalPipeline:
             start += chunk_size - overlap
         # verifie si les chunk ne sont pas trop petit et donc sens context
         for i, chunk in enumerate(chunks):
-            if len(chunk) > 300:
+            if len(chunk) < 300:
                 chunks.pop(i)
 
         return chunks
 
     def index_text(self, file_path):
+        
         # Lit le contenu du fichier texte en encodage UTF-8
         with open(file_path, "r", encoding='utf-8') as text:
             text_law = text.read()
@@ -94,7 +107,7 @@ class RetrievalPipeline:
                 ids=[chunk_id],
                 documents=[chunk],
                 embeddings=[embedding],
-                metadatas=[{"source": file_path, "categorie": category, "date": date}]
+                metadatas=[{"source": str(file_path), "categorie": category, "date": date}]
             )
             new_chunks += 1
 
@@ -111,8 +124,12 @@ class RetrievalPipeline:
         query_embedding = self.model.encode(query_text)
         # Recherche dans la collection Chroma les segments les plus similaires
         
+        # recupere le dossier ou est ce code
+        base_dir = Path(__file__).resolve().parent
+        clean_dir = base_dir / "clean_data"
+
         # Récupère la liste des documents dans le dossier
-        clean_data_path_list = os.listdir("./project/clean_data")
+        clean_data_path_list = os.listdir(clean_dir)
         # La quantité de documents 
         n_result = len(clean_data_path_list)
         
@@ -128,30 +145,30 @@ class RetrievalPipeline:
         # Vérifier si les résultats sont valides
         if results is None:
             print("\n" + "="*100)
-            print(" ⚠️  ERREUR ".center(100))
+            print("   ERREUR ".center(100))
             print("="*100)
-            print("\n❌ La requête est vide ! Veuillez saisir une question ou des mots-clés.\n")
+            print("\n La requête est vide ! Veuillez saisir une question ou des mots-clés.\n")
             print("="*100 + "\n")
             return
         
         if not results['documents'][0]:
             print("\n" + "="*100)
-            print(" 🔍  RECHERCHE SÉMANTIQUE - AUCUN RÉSULTAT ".center(100))
+            print("   RECHERCHE SÉMANTIQUE - AUCUN RÉSULTAT ".center(100))
             print("="*100)
-            print(f"\n💬 Requête : \"{query}\"")
-            print(f"\n❌ Aucun résultat trouvé pour cette requête.\n")
+            print(f"\n Requête : \"{query}\"")
+            print(f"\n Aucun résultat trouvé pour cette requête.\n")
             print("="*100 + "\n")
             return
         
         print("\n" + "="*100)
-        print(" 🔍  RECHERCHE SÉMANTIQUE - RÉSULTATS ".center(100))
+        print("   RECHERCHE SÉMANTIQUE - RÉSULTATS ".center(100))
         print("="*100)
-        print(f"\n💬 Requête : \"{query}\"")
-        print(f"📊 Nombre de résultats trouvés : {len(results['documents'][0])}")
+        print(f"\n Requête : \"{query}\"")
+        print(f" Nombre de résultats trouvés : {len(results['documents'][0])}")
         print("\n" + "="*100 + "\n")
         
         # Parcourir tous les résultats
-        for i in range(1, 4):
+        for i in range(0, 3):
             doc = results["documents"][0]
             metadata = results["metadatas"][0]
             distance = results["distances"][0]
@@ -170,12 +187,12 @@ class RetrievalPipeline:
             cleaned_doc = doc[i].replace('\\n', ' ').replace('\n', ' ')  # Remplace les retours à la ligne
             cleaned_doc = ' '.join(cleaned_doc.split())  # Enlève les espaces multiples
             
-            print(f"╔═ 📄 RÉSULTAT #{i} {'═'*85}")
+            print(f"╔═  RÉSULTAT #{i} {'═'*85}")
             print(f"║")
-            print(f"║  📂 Source      : {metadata[i].get('source', 'N/A')}")
+            print(f"║   Source      : {metadata[i].get('source', 'N/A')}")
             print(f"║  {score_emoji} Pertinence  : {similarity_score:.1f}%")
             print(f"║")
-            print(f"║  📝 Extrait :")
+            print(f"║   Extrait :")
             print(f"║  {'-'*96}")
             # Coupe le texte pour un affichage propre (75 caractères par ligne)
             words = cleaned_doc.split()
@@ -195,15 +212,21 @@ if __name__ == "__main__":
     # Initialise le pipeline de recherche
     retrieval_pipeline = RetrievalPipeline()
     
-    print("🔄 Indexation des documents...")
-
+    print(" Indexation des documents...")
+    
     # Parcourt tous les fichiers texte dans le dossier 'clean_data' et les indexe
-    file_list = os.listdir("project\clean_data")
+    #base du projet ou ce fichier ce trouve
+    base_dir = Path(__file__).resolve().parent
+    project_root = base_dir
+    #chemin vers clean_data
+    data_dir = (project_root / "clean_data").resolve()
 
-    for file_path in file_list:
-        file_path = os.path.join("project\clean_data", file_path)
+    file_list = os.listdir(data_dir)
+
+    for file in file_list:
+        file_path = data_dir / file
         retrieval_pipeline.index_text(file_path)
-
+    
     # Définit une requête de recherche (depuis la ligne de commande ou par défaut)
     if len(sys.argv) > 1:
         # Récupère la requête depuis les arguments de la ligne de commande
@@ -211,9 +234,9 @@ if __name__ == "__main__":
     else:
         # Demande à l’utilisateur de saisir une requête
         print("\n" + "="*100)
-        print(" 💬  SAISISSEZ VOTRE REQUÊTE ".center(100))
+        print("   SAISISSEZ VOTRE REQUÊTE ".center(100))
         print("="*100)
-        query = input("\n🔍 Votre question : ").strip()
+        query = input("\n Votre question : ").strip()
     
     # Exécute la requête sur la collection Chroma
     result = retrieval_pipeline.query_search(query)
