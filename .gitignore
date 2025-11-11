@@ -15,6 +15,7 @@ chroma_db/
 # Données
 raw_pdfs/
 clean_data/*.txt
+base_dechets.json
 
 # IDE
 .vscode/
