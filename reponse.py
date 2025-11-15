@@ -13,9 +13,8 @@ class Generation:
 
     def prompt_augmentation(self, query_text):
         # resulta des recherche
-        results = self.pipeline.query_search(query_text=query_text)
-        # document recupere de la recherche
-        doc = results["documents"][0]
+        response, results = self.pipeline.query_search(query_text=query_text)
+
         # prompt detailer
         prompt =f"""
                 Tu es un assistant qui répond uniquement à partir des documents suivants.
@@ -24,7 +23,7 @@ class Generation:
                 répond exactement : "Aucune information pertinente trouvée dans les documents."
 
                 Règles à suivre :
-                1. Utilise exclusivement les faits présents dans les documents ci-dessous.
+                1. Utilise exclusivement les faits présents dans les documents ci-dessous, sans dire :"selon les documents fournis"
                 2. Si une idée ou phrase ne provient pas clairement des documents, NE L'ÉCRIS PAS.
                 3. Si la réponse ne peut pas être déduite directement des documents, réponds exactement :
                 "Aucune information pertinente trouvée dans les documents."
@@ -32,9 +31,9 @@ class Generation:
 
                 Ta tâche :
                 - Lis attentivement les documents suivants :
-                {doc[0]}
-                {doc[1]}
-                {doc[2]}
+                {response[0]}
+                {response[1]}
+                {response[2]}
 
                 - Puis, réponds strictement à la question ci-dessous.
                 - Si la réponse n'est pas clairement présente ou déductible des documents, réponds uniquement :

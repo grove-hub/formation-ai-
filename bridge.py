@@ -21,13 +21,13 @@ model = Generation()
 class Query(BaseModel):
     query: str
 
-class DemoRequest(BaseModel):
-    name: str
-    email: EmailStr
-    company: str
-    phone: str | None = None
-    role: str
-    message: str
+# class DemoRequest(BaseModel):
+#     name: str
+#     email: EmailStr
+#     company: str
+#     phone: str | None = None
+#     role: str
+#     message: str
 
 @app.post("/search")
 
@@ -43,7 +43,7 @@ def search(data: Query):
             "id": 1,
             "title": f"Résultat pour '{data.query}'",
             "excerpt": model_response,
-            "source": "Local Python",
+            "source": "En manutention",
             "date": date.today().isoformat(),
             "type": "Réponse IA",
             "relevance": round(relevance),
@@ -56,21 +56,21 @@ def search(data: Query):
     
     return payload
 
-@app.post("/demo-request")
-def demo_request(data: DemoRequest):
-    # pour l’instant on log
-    print("Nouvelle demande de démo :")
-    print(f"- Nom: {data.name}")
-    print(f"- Email: {data.email}")
-    print(f"- Société: {data.company}")
-    print(f"- Téléphone: {data.phone}")
-    print(f"- Rôle: {data.role}")
-    print(f"- Message: {data.message}")
+# @app.post("/demo-request")
+# def demo_request(data: DemoRequest):
+#     # pour l’instant on log
+#     print("Nouvelle demande de démo :")
+#     print(f"- Nom: {data.name}")
+#     print(f"- Email: {data.email}")
+#     print(f"- Société: {data.company}")
+#     print(f"- Téléphone: {data.phone}")
+#     print(f"- Rôle: {data.role}")
+#     print(f"- Message: {data.message}")
 
-    # ici tu pourrais :
-    # - enregistrer en base
-    # - envoyer un email
-    # - créer un ticket
-    # - appeler un autre service
+#     # ici tu pourrais :
+#     # - enregistrer en base
+#     # - envoyer un email
+#     # - créer un ticket
+#     # - appeler un autre service
 
-    return {"status": "ok", "message": "Demande reçue"}
+#     return {"status": "ok", "message": "Demande reçue"}
