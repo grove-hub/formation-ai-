@@ -2,7 +2,6 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 import os
 from pathlib import Path
-import sys
 import json
 import re
 
@@ -56,13 +55,13 @@ class RetrievalPipeline:
         start = 0
         while start < len(text):
             end = start + chunk_size
-            chunks.append(text[start:end])
+            chunk = text[start:end]
+            # si le chunk est assez grand, on le garde
+            if len(chunk) >= 250:
+                chunks.append(chunk)
+
             # Déplace la fenêtre vers l’avant, en gardant un chevauchement pour préserver le contexte
             start += chunk_size - overlap
-        # verifie si les chunk ne sont pas trop petit et donc sens context
-        for i, chunk in enumerate(chunks):
-            if len(chunk) < 300:
-                chunks.pop(i)
 
         return chunks
 
@@ -89,9 +88,12 @@ class RetrievalPipeline:
         # Récupère les identifiants de documents existants dans la collection Chroma pour éviter les doublons
         existing_ids = set(self.collection.get()["ids"])
         new_chunks = 0
+        
+        idx = len(existing_ids)
 
         # Boucle sur tous les segments du fichier
         for i, chunk in enumerate(chunks):
+            idx += 1
             # Crée un identifiant unique pour chaque segment basé sur le nom du fichier et son index
             chunk_id = f"{file_id}_chunk_{i}" 
             # recupere la categorie
@@ -107,7 +109,7 @@ class RetrievalPipeline:
                 ids=[chunk_id],
                 documents=[chunk],
                 embeddings=[embedding],
-                metadatas=[{"source": str(file_path), "categorie": category, "date": date}]
+                metadatas=[{"source": file_id, "categorie": category, "date": date, "chunk_id":idx}]
             )
             new_chunks += 1
 
@@ -123,27 +125,34 @@ class RetrievalPipeline:
         # Encode le texte de la requête en un vecteur d’embedding
         query_embedding = self.model.encode(query_text)
         # Recherche dans la collection Chroma les segments les plus similaires
-        
-        # recupere le dossier ou est ce code
-        base_dir = Path(__file__).resolve().parent
-        clean_dir = base_dir / "clean_data"
-
-        # Récupère la liste des documents dans le dossier
-        clean_data_path_list = os.listdir(clean_dir)
-        # La quantité de documents 
-        n_result = len(clean_data_path_list)
-        
+        n_result = 3
         result = self.collection.query(
             query_embeddings=[query_embedding],
-            n_results=n_result
+            n_results= n_result
         )
+
+        final_result = []
+        metadatas_dic = result["metadatas"][0]
+        for i in range(n_result):
+            
+            metadata = metadatas_dic[i]
+            idx = metadata["chunk_id"]
+            neighbors = self.collection.get(
+                where={
+                    "chunk_id":{"$in": [idx-1, idx, idx+1]}
+                }
+            )
+            doc_str = ""
+            for doc in neighbors["documents"]:
+                doc_str += str(doc)
+            final_result.append(doc_str)
         # Retourne les résultats de la recherche
-        return result
+        return final_result, result
     
-    def display_results(self, query, results):
+    def display_results(self, query, response, results):
         """Affiche les résultats de recherche de manière claire et formatée"""
         # Vérifier si les résultats sont valides
-        if results is None:
+        if response is None:
             print("\n" + "="*100)
             print("   ERREUR ".center(100))
             print("="*100)
@@ -151,7 +160,7 @@ class RetrievalPipeline:
             print("="*100 + "\n")
             return
         
-        if not results['documents'][0]:
+        if not response:
             print("\n" + "="*100)
             print("   RECHERCHE SÉMANTIQUE - AUCUN RÉSULTAT ".center(100))
             print("="*100)
@@ -164,12 +173,11 @@ class RetrievalPipeline:
         print("   RECHERCHE SÉMANTIQUE - RÉSULTATS ".center(100))
         print("="*100)
         print(f"\n Requête : \"{query}\"")
-        print(f" Nombre de résultats trouvés : {len(results['documents'][0])}")
+        print(f" Nombre de résultats trouvés : {len(response)}")
         print("\n" + "="*100 + "\n")
         
         # Parcourir tous les résultats
         for i in range(0, 3):
-            doc = results["documents"][0]
             metadata = results["metadatas"][0]
             distance = results["distances"][0]
             # Calculer le score de similarité (plus c’est proche de 100 %, mieux c’est)
@@ -184,7 +192,7 @@ class RetrievalPipeline:
                 score_emoji = "🔴"
             
             # Nettoyer le texte pour un meilleur affichage
-            cleaned_doc = doc[i].replace('\\n', ' ').replace('\n', ' ')  # Remplace les retours à la ligne
+            cleaned_doc = response[i].replace('\\n', ' ').replace('\n', ' ')  # Remplace les retours à la ligne
             cleaned_doc = ' '.join(cleaned_doc.split())  # Enlève les espaces multiples
             
             print(f"╔═  RÉSULTAT #{i} {'═'*85}")
@@ -227,18 +235,13 @@ if __name__ == "__main__":
         file_path = data_dir / file
         retrieval_pipeline.index_text(file_path)
     
-    # Définit une requête de recherche (depuis la ligne de commande ou par défaut)
-    if len(sys.argv) > 1:
-        # Récupère la requête depuis les arguments de la ligne de commande
-        query = " ".join(sys.argv[1:])
-    else:
-        # Demande à l’utilisateur de saisir une requête
-        print("\n" + "="*100)
-        print("   SAISISSEZ VOTRE REQUÊTE ".center(100))
-        print("="*100)
-        query = input("\n Votre question : ").strip()
+    # Demande à l’utilisateur de saisir une requête
+    print("\n" + "="*100)
+    print("   SAISISSEZ VOTRE REQUÊTE ".center(100))
+    print("="*100)
+    query = input("\n Votre question : ").strip()
     
     # Exécute la requête sur la collection Chroma
-    result = retrieval_pipeline.query_search(query)
+    final_result, result_data = retrieval_pipeline.query_search(query)
     # Affiche les résultats de recherche de manière claire
-    retrieval_pipeline.display_results(query, result)
+    retrieval_pipeline.display_results(query, final_result, result_data)
