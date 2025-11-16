@@ -11,7 +11,7 @@ from azure.storage.filedatalake import DataLakeServiceClient
 
 # ---------- CONFIGURATION ----------
 account_name = "juridicai"
-account_key = "m44odKv6U+Or8mqClO7b2uyqHZ8oWOCxDJpS/8wFJhG4rlHVBQSwnJ2Xhs3sPcz//Wmaa6qlmbxi+AStVMnbjQ==" 
+account_key = "" 
 file_system_name = "data"
 pdf_folder = [p.name for p in DataLakeServiceClient(account_url=f"https://{account_name}.dfs.core.windows.net", credential=account_key).get_file_system_client(file_system_name).get_paths(path="raw_pdfs")]
 
