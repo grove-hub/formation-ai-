@@ -130,18 +130,23 @@ class RetrievalPipeline:
             query_embeddings=[query_embedding],
             n_results= n_result
         )
-
+        
+        # list pour mettre les retour finaux des document
         final_result = []
+        # reprend les metadata
         metadatas_dic = result["metadatas"][0]
+        # parcour au nombre de resultat demander
         for i in range(n_result):
-            
+            # recupere les id des chunk
             metadata = metadatas_dic[i]
             idx = metadata["chunk_id"]
+            # fait une recherche des chunk voisin 
             neighbors = self.collection.get(
                 where={
                     "chunk_id":{"$in": [idx-1, idx, idx+1]}
                 }
             )
+            # ajoute les document trouver 
             doc_str = ""
             for doc in neighbors["documents"]:
                 doc_str += str(doc)
