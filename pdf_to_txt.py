@@ -4,8 +4,21 @@ Convertit tous les fichiers PDF du dossier raw_pdfs/ en fichiers TXT dans clean_
 """
 from pypdf import PdfReader 
 import os
+from azure.identity import ClientSecretCredential
+from azure.storage.filedatalake import DataLakeServiceClient
 
-def pdf_to_txt(pdf_folder="project\\raw_pdfs", output_folder="project\\clean_data"):
+from azure.storage.filedatalake import DataLakeServiceClient
+
+# ---------- CONFIGURATION ----------
+account_name = "juridicai"
+account_key = "m44odKv6U+Or8mqClO7b2uyqHZ8oWOCxDJpS/8wFJhG4rlHVBQSwnJ2Xhs3sPcz//Wmaa6qlmbxi+AStVMnbjQ==" 
+file_system_name = "data"
+pdf_folder = [p.name for p in DataLakeServiceClient(account_url=f"https://{account_name}.dfs.core.windows.net", credential=account_key).get_file_system_client(file_system_name).get_paths(path="raw_pdfs")]
+
+output_folder = [p.name for p in DataLakeServiceClient(account_url=f"https://{account_name}.dfs.core.windows.net", credential=account_key).get_file_system_client(file_system_name).get_paths(path="clean_data")]
+# -----------------------------------
+
+def pdf_to_txt(pdf_folder, output_folder):
     """
     Convertit tous les PDFs d'un dossier en fichiers TXT
     
