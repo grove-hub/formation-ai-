@@ -1,5 +1,5 @@
 """
-Script de conversion PDF vers TXT
+Script de conversion PDF vers TXT 
 Convertit tous les fichiers PDF du dossier raw_pdfs/ en fichiers TXT dans clean_data/
 """
 from pypdf import PdfReader 
