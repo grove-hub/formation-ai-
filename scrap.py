@@ -8,7 +8,7 @@ from pypdf import PdfReader
 from docx import Document
 # Recupere les document des url passe et les transforme en texte netoyer et pret pour le pipeline
 
-class TextScraper():
+class TextScrapper():
     def __init__(self, url):
         
         try:
@@ -32,7 +32,7 @@ class TextScraper():
         self.base_dir = Path(__file__).resolve().parent
         self.project_root = self.base_dir
         # fichier des pdf
-        self.raw_pdf = os.path.join(self.project_root, "raw_pdf")
+        self.raw_pdf = os.path.join(self.project_root, "raw_pdfs")
         # fichier sortie
         self.output_folder = os.path.join(self.project_root, "before_clean_data")
         # fichier pour les entierement pret
@@ -140,10 +140,11 @@ class TextScraper():
 
             pdf_path = os.path.join(self.raw_pdf, pdf_path)
             pdf_name = os.path.basename(pdf_path)
+            root, extension = os.path.splitext(pdf_name)
             
             try:
                 try:
-                    txt_name = pdf_name.replace('.pdf', '.txt')
+                    txt_name = pdf_name.replace(extension, '.txt')
                     output_path = os.path.join(self.output_folder, txt_name)
                     
                     if not txt_name in  text_list:
@@ -245,11 +246,43 @@ class TextScraper():
             with open(clean_text_directory, "w", encoding="utf-8") as t:
                 t.write(text_to_clean)
 
+    def clone_verifie(self):
+        # verifie les si il y a des texe en double et les suprime
+
+        text_list = os.listdir(self.final_folder)
+
+        # recupere tout les texte
+        for i, text_file in enumerate(text_list):
+
+            try:
+                text_directory = os.path.join(self.final_folder, text_file)
+
+                with open(text_directory, "r", encoding="utf-8") as t:
+                    text = t.read()
+            except:
+                pass
+            counter = 0
+            for n in text_list:
+                try:
+                    text_directory_b = os.path.join(self.final_folder, n)
+                    with open(text_directory_b, "r", encoding="utf-8") as r:
+                        text_b = r.read()
+
+                    if text == text_b and counter == 0:
+                        counter += 1
+                    elif text == text_b and counter > 0:
+                        os.remove(text_directory_b)
+                        print(f"File {text_directory_b} removed")
+                except:
+                    pass
+
+                
+        
 if __name__ == "__main__":
     # tout les site qu on veut scraper
     # peut avoir les url que vous vouler
     urls = [
-        "https://www.arp-gan.be/fr/les-amendes"
+        "https://environnement.brussels/pro/gestion-environnementale/gerer-les-dechets/parcours-dechets-professionnels-reduire-trier-et-gerer-vos-dechets-bruxelles"
     ]
 
     if len(urls) == 0:
@@ -259,8 +292,10 @@ if __name__ == "__main__":
             url = str(input("Votre url: "))
             urls.append(url)
     for u in urls:
-        scrap = TextScraper(u)
+        scrap = TextScrapper(u)
         # telecharge tout les texte
-        scrap.download_text()
-        scrap.pdf_to_txt()
-        scrap.clean_text()
+        # scrap.download_text()
+        # scrap.pdf_to_txt()
+        # scrap.clean_text()
+
+    scrap.clone_verifie()
