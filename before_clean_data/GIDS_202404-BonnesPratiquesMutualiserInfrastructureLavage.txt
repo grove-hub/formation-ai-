@@ -1,0 +1,341 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+GUIDE DE BONNES PRATIQUES 
+MUTUALISER UNE INFRASTRUCTURE DE LAVAGE 
+Quelques conseils pour bien débuter un partenariat 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+AVRIL 2024
+PAGE 2 SUR 8 
+GUIDE DE BONNES PRATIQUES : MUTUALISER UNE INFRASTRUCTURE DE LAVAGE - 2024 
+ 
+ 
+TABLE DES MATIERES 
+Contexte ................................................................................................................................................................................... 3 
+Par où commencer une coopération ? ..................................................................................................................................... 3 
+Garantir le réemploi ................................................................................................................................................................ 3 
+1. Dans un commerce ....................................................................................................................................... 3 
+2. Dans une cantine .......................................................................................................................................... 4 
+Choix des emballages ............................................................................................................................................................. 4 
+1. Quel matériau pour quel usage ? ................................................................................................................. 4 
+2. Travailler avec du plastique ......................................................................................................................... 4 
+3. Travailler avec du verre ................................................................................................................................ 5 
+4. Travailler avec de l’inox ............................................................................................................................... 5 
+5. Choix du conditionnement secondaire ......................................................................................................... 5 
+Les étiquettes : un élément critique pour le réemploi ........................................................................................................... 6 
+Vos obligations en termes de sécurité alimentaire ................................................................................................................ 7 
+1. Faut-il s’inscrire à l’AFSCA ? ........................................................................................................................ 7 
+2. Comment garantir la traçabilité des emballages ? ...................................................................................... 7 
+3. Vérifications à faire chez l’opérateur de réemploi ....................................................................................... 7 
+4. Certificats que l’opérateur de réemploi doit fournir à ses utilisateurs  ........................................................ 8 
+4.1. Une déclaration de conformité .................................................................................................................................. 8 
+4.2. Un carnet de qualité ...................................................................................................................................................... 8 
+ 
+ 
+ PAGE 3 SUR 8 
+GUIDE DE BONNES PRATIQUES : MUTUALISER UNE INFRASTRUCTURE DE LAVAGE - 2024 
+ 
+CONTEXTE 
+En 2024 , Bruxelles Environnement  a commandité une étude de recensement  des capacités de lavage des 
+contenants alimentaires en Région Bruxelloise. Suite à cette étude, Bruxelles Environnement a publié un outil 
+visant à faciliter la mutualisation d’infrastructures de lavage pour favoriser l’adoption d’emballages alimentaires 
+réutilisables sur le territoire bruxellois.  
+En réalisant cette étude, et en discutant avec des professionnels du secteur, nous avons tenu à vous livrer 
+quelques recommandations pour faciliter une coopération dans les meilleures conditions.  
+Ces informations n’ont pas de valeur légale et sont fournies à titre indicatif uniquement. Les mesures permettant 
+de garantir la sécurité alimentaire pour votre activité restent à charge de votre responsabilité.  
+ 
+PAR OU COMMENCER UNE COOPERATION ? 
+Cette liste est issue d’un partage d’expériences d’entreprises pratiquant déjà le réemploi d’emballages.  
+Voici une liste de questions à vous poser :  
+• À quelle fréquence souhaitez-vous nettoyer les emballages ? Pour quels volumes ?  
+• Quels tarifs sont proposés dans le cadre de la mutualisation ? Ces tarifs sont-ils adaptables au volume ? 
+• Où commence et s’arrête la responsabilité de chaque partenaire en termes d’hygiène alimentaire ? Qui 
+émet les certificats d’alimentarité (voir plus bas) ?  
+• Dans le cas où un utilisateur travaille sur une machine qui n’est pas la sienne, où commence et s’arrête la 
+responsabilité de chaque partenaire en termes de sécurité du personnel et de la machine ? 
+• Quel résultat est attendu ?  
+• Les emballages doivent-ils être triés, rincés, comptés ? Cela est-il compris dans l’offre ? Disposez-vous 
+d’un espace de travail « sale » pour effectuer le tri sans contaminer l’espace « propre » ? Que faire des 
+emballages parasites (des emballages différents qui ont été retournés par erreur)  ? 
+• Comment le contrôle qualité est-il réalisé ?  
+• Qui prend en charge la logistique (horaires, personne de contact, procédures dépôt/collecte) ? 
+• À quelle fréquence sont nettoyées la zone et le dispositif de lavage ? 
+• Les produits de désinfection sont-ils bien autorisés par le SPF santé (biocide.be) ? 
+En outre, il est important de prendre en compte certains détails techniques et critiques pouvant avoir un impact 
+sur vos choix : 
+• Quelles étiquettes utiliser pour éviter les traces de colle ? 
+• Dans quel état de saleté reviennent les emballages (moisissure, aliments séchés…) ? 
+• Présence de verre brisé : quelles précautions pour les travailleurs ? 
+ 
+GARANTIR LE REEMPLOI 
+1. DANS UN COMMERCE 
+Il est nécessaire d’avoir un bon taux de retour et de réemploi de vos emballages pour atteindre l’impact 
+écologique souhaité. Cela demande souvent une éducation des consommateurs, qui n’en ont pas encore 
+l’habitude. L’usage d’une consigne ou d’un QR code améliorera radicalement le taux de retour.  
+Choisissez des emballages que l’on identifie clairement comme réutilisables, et faites la promotion de votre 
+initiative de réemploi partout où c’est possible  : sur les étiquettes, dans le catalogue, en rayon, à la caisse, 
+sur votre site et les réseaux sociaux… Le personnel qui distribue les produits doit aussi être bien informé de 
+la démarche et de son importance pour en devenir des ambassadeurs.  
+ PAGE 4 SUR 8 
+GUIDE DE BONNES PRATIQUES : MUTUALISER UNE INFRASTRUCTURE DE LAVAGE - 2024 
+ 
+2. DANS UNE CANTINE 
+Dans une cantine d’entreprise ou d’administration, il n’est pas toujours indiqué d’employer des consignes ou des 
+QR codes, mais plutôt de réfléchir stratégiquement le parcours utilisateur (par exemple, le retour de l’emballage 
+peut être plutôt près des toilettes ou de la machine à café que près de la cuisine, selon les trajets des employés 
+dans l’après-midi) et de mettre en place des incitants ou « nudges » (communication engageante, messages sur 
+les sets de table / serviettes éventuels, à la caisse, concours entre départements sur les meilleurs retours de 
+consignes, prix au groupe qui a le meilleur retour de consigne…). 
+De plus, un  emballage de réemploi doit être reconnaissable par le consommateur qui doit facilement le 
+distinguer d’un emballage à usage unique pour effectuer le bon geste : retour en point de vente pour l’emballage 
+en réemploi, tri dans le bon bac de tri pour l’emballage à usage unique. 
+ 
+CHOIX DES EMBALLAGES 
+1. QUEL MATERIAU POUR QUEL USAGE ? 
+Si le verre reste le matériau le plus courant des emballages réemployables (ex. bouteilles de jus, de bières, pots 
+de yaourt…), il existe d’autre s emballages réemployables confectionnés à partir d’autres  matériaux comme le 
+plastique (notamment en polypropylène (PP)), l’inox ou le tissu (par ex. pour l’achat de produits en vrac). 
+Il est essentiel d’utiliser un emballage standard pour le réemploi, qui est conçu pour être réemployé, c’est-à-dire 
+qu’il : 
+• répond aux exigences de robustesse et de sécurité, essentielles à son utilisation ; 
+• a la même forme, quelle que soit la marque qui l’utilise (la standardisation des emballages est un point clé 
+du réemploi). 
+Pour bien choisir le contenant réutilisable qui conviendra à votre utilisation et le type de matériau à utiliser, voici 
+quelques critères pour vous aider à prendre les bonnes décisions : 
+• Un emballage réutilisable doit être fait d’un matériau durable : l’idéal est de choisir des emballages faits de 
+matériaux résistants, mais qui seront également recyclables. Par exemple, les contenants de verre ont une 
+excellente durée de vie en plus de pouvoir être recyclés. 
+• Le système de fermeture de l’emballage doit pouvoir conserver son efficacité : il doit pouvoir conserver ses 
+propriétés au fil des utilisations. 
+• L’emballage doit idéalement pouvoir se ranger facilement (empilable, emboitable, pliable).  
+ 
+2. TRAVAILLER AVEC DU PLASTIQUE 
+Le plastique est plus léger que le verre, et présente de nombreux avantages logistiques.  
+Comme il ne se brise pas, il est l’allié pour tous les aliments devant être consommés dans une foule ou sur la 
+voie publique.  
+Choisissez du plastique prévu pour le contact alimentai re et le réemploi. Le fabricant doit vous fournir un 
+certificat alimentaire à cet effet. Discutez avec lui des conditions dans lesquelles le plastique sera employé et 
+nettoyé (températures, chimie).  
+Point d’attention à l’usage du plastique : le séchage 
+Un point critique pour le réemploi du plastique est le séchage  : très peu de machines offrent un résultat 
+parfaitement sec permettant de reconditionner les emballages dès la sortie du lavage.  
+Néanmoins, les tunnels prévus pour laver du plastique devraient rendre des emballages propres, dans la 
+mesure où ils sont bien configurés. Il est intéressant de noter que la configuration peut varier entre le lavage 
+de gobelets, de plats, de boîtes, de cas iers (la fréquence de vibrations au séchage varie selon la forme de 
+l’emballage). Plusieurs configurations peuvent exister dans l’ordinateur de bord, n’hésitez pas à contacter le 
+fabricant de la machine pour optimiser le séchage.  
+ 
+ PAGE 5 SUR 8 
+GUIDE DE BONNES PRATIQUES : MUTUALISER UNE INFRASTRUCTURE DE LAVAGE - 2024 
+ 
+3. TRAVAILLER AVEC DU VERRE 
+Travailler avec du verre représente un risque plus élevé pour le bris de verre et un peu plus de pénibilité 
+logistique en raison de  son poids. Par ailleurs , c’est un matériau inerte en terme alimentaire et visuellement 
+flatteur pour les aliments (il sont visibles dans le contenant).  
+Choisissez du verre prévu pour le réemploi :  
+• Pots en verre traité (ex. pots Weck ou Le Parfait ou plats Duralex) 
+• Plats en verre borosilicate (ex. plats Pyrex et certains plats Ikea) 
+• Bocaux ou bouteilles prévus pour le réemploi, c’est-à-dire renforcés au-dessus et en-dessous de la zone 
+d’étiquetage : ces emballages peuvent être réemployés une cinquantaine de fois et , grâce aux zones de 
+renfort, l’usure est concentrée autour de deux endroits, ce qui permet d’isoler le ver re trop vieux qui risque 
+de se briser.  
+Ceci est d’autant plus important si vous souhaitez pasteuriser, stériliser ou mettre sous vide vos aliments.  
+Les capsules métalliques et les joints en caoutchouc ne sont pas réutilisables pour ces emplois.  
+ 
+Que faire en cas de bris de verre ? 
+Tenez à disposition de vos travailleurs une procédure reprenant les instructions suivantes  :  
+ 
+Interrompre les activités dans l'espace concerné. Délimiter une zone d’exclusion de 4 m autour du 
+point d’impact et éviter le pl us possible les déplacements des personnes qui étaient présentes au 
+moment de l’impact. 
+ 
+Enlever les éclats de verre et les rassembler dans le conteneur prévu à cet effet.  
+ 
+Inspection profonde de l'environnement : plans de travail, équipement, sol... 
+ 
+Tout produit ou préparation non couverts dans la zone doivent être éliminés comme déchets.  
+ 
+Le matériel de nettoyage doit être évacué de manière sûre et débarrassé de tout éclat de verre.  
+ 
+Les personnes qui étaient présentes au moment de l’impact reviennent avec une tenue propre. 
+ 
+4. TRAVAILLER AVEC DE L’INOX 
+L’inox est utilisé dans le quotidien des consommateurs et de l’industrie agroalimentaire depuis des années. Pour 
+les produits en contact avec des denrées alimentaires il faut cependant s’assurer d’un inox de qualité. 
+Les produits en inox sont résistants aux chocs, ils ne sont pas sensibles aux rayures ou aux hautes températures. 
+Il existe différentes qualités d’inox : l’inox 18/10 ou l’inox 18/0. 
+L'inox 18/10 coûte plus cher mais il n'a pas de réelle plus-value environnementale par rapport à l'inox 18/0.  
+Contrairement au 18/0, on ne trouve jamais de 18/10 recyclé. Le 18/0, moins cher, est aussi plus écologique. On 
+évite de l'utiliser dans des situations présentant de grands risques de rouille, comme une gourde prévue pour 
+contenir de l'eau pendant vingt ans.  
+ 
+5. CHOIX DU CONDITIONNEMENT SECONDAIRE 
+Prenez le temps de choisir un conditionnement secondaire limitant autant que possible les 
+chocs entre les emballages, qu’ils soient vides ou pleins. C’est un petit investissement, mais ce 
+matériel d’emballage solide et réutilisable vous suivra pendant plusieurs dizaines d’années 
+durant toutes les opérations logistiques de vos produits. Si vous choisissez des casiers ouverts, envisagez la 
+nécessité d’ajouter un support à la base pour éviter les contaminations par le bas.  
+PAGE 6 SUR 8 
+GUIDE DE BONNES PRATIQUES : MUTUALISER UNE INFRASTRUCTURE DE LAVAGE - 2024 
+ 
+LES ETIQUETTES : UN ELEMENT CRITIQUE POUR LE REEMPLOI 
+La plupart des étiquettes qui sont sur le marché ne sont pas adaptées au réemploi d’emballages. Il convient de 
+prendre une heure ou deux pour en discuter de vive voix avec votre imprimeur et de tester votre solution 
+d’étiquette sur le contenant que vous avez choisi, dans la machine que vous avez choisie, donc en situation réelle, 
+avant d’en acheter de grandes quantités.  
+Gratter des étiquettes ou des traces de colle à la main représente un coût énorme qu’il faut éviter à tout prix.  
+ 
+Des étiquettes en papier dites « hydrosolubles » sont souvent proposées par les imprimeurs, mais elles ne 
+peuvent être nettoyées que dans des laveuses industrielles ou après un long trempage dans un ba in de 
+soude chaud. Souvent, un passage en lave-vaisselle domestique est fatal pour ces étiquettes : elles collent 
+de manière permanente.  
+ 
+Votre imprimeur ou votre opérateur de consignes vous poseront les questions suivantes pour choisir l’étiquette 
+la plus adaptée à vos besoins :  
+• Souhaitez-vous que l’étiquette s’enlève facilement au lavage, ou au contraire qu’elle y résiste des 
+centaines de fois ?  
+• Sur quel matériau collerez-vous vos étiquettes ? Est-il lisse ou granuleux à cet endroit ?  
+• Vos recettes sont-elles fixes et en nombre limité ? Peut-on les pré-imprimer ou devez-vous imprimer 
+chaque recette lors de la fabrication ? 
+• Comment allez-vous indiquer la date et le numéro de lot ? 
+• Si une partie de votre emballage n’est pas réutilisable, vous pouvez coller l’étiquette de numéro de lot 
+à cet endroit (ex : couvercle métallique de bocal) 
+• Si vous achetez des étiquettes pré-imprimées, vous pouvez ajouter la date et le numéro de lot, voire 
+même la recette, dans une zone vierge à l’aide d’une imprimante thermotransfert.  
+• Si vous souhaitez imprimer ou ajouter des infos sur des étiquettes fournies, de quelle imprimante disposez -
+vous ? Les imprimeurs peuvent fournir des rouleaux d’étiquettes qui s’adaptent à votre modèle.  
+• Quelle quantité souhaitez-vous commander ?  
+• À quelle température collez-vous les étiquettes sur les emballages ?  
+• L’emballage doit-il ensuite être stocké au frigo, au congélateur, réchauffé au micro-ondes, au bain-marie ? 
+Les colles ont des tolérances de températures variables.  
+• Quelle sera la procédure de lavage ? Bain de soude ? Température de l’eau ? N’oubliez pas que les 
+consommateurs passent souvent leurs emballages au lave-vaisselle, à 70°C.  
+• Est-il envisageable de concevoir la forme et la position de l’étiquette pour que le consommateur soit 
+contraint de l’enlever avant le lavage ? (Ex : chevauchement sur le couvercle). C’est une solution low-tech 
+qui résoud beaucoup de problèmes.  
+ 
+Enfin, pensez à mentionner sur l’étiquette que l’emballage est réutilisable, avec le sigle officiel (ajouter sigle). 
+C’est un engagement écologique considérable que le consommateur doit apprendre à comprendre et à 
+reconnaître dans ses habitudes. Faites-lui la part belle et félicitez le consommateur qui rapporte son emballage ! 
+ 
+Si vous revendez des aliments ailleurs que dans votre établissement ou pour une consommation après plus 
+de 48h, vous devez l’étiqueter.  
+ 
+ 
+ PAGE 7 SUR 8 
+GUIDE DE BONNES PRATIQUES : MUTUALISER UNE INFRASTRUCTURE DE LAVAGE - 2024 
+ 
+VOS OBLIGATIONS EN TERMES DE SECURITE ALIMENTAIRE 
+1. FAUT-IL S’INSCRIRE A L’AFSCA ?  
+Vous fournissez des emballages ET les nettoyez :  
+Vous devez être  enregistré à l’AFSCA dans la catégorie 102 « Fabricant d’emballage  ». Dans le cadre du 
+réemploi, il s’agit d’ « Opérateurs de consignes ».  
+Il faut également faire une distinction entre produits d’emballage et matériaux en contact :  
+• L’emballage est vendu à une entreprise qui emballe quelque chose dedans. 
+• Un pot vendu vide à un consommateur est un matériau en contact. 
+Vous nettoyez seulement des emballages : 
+ Si ces emballages n’ont pas été mis par vous -même sur le marché , vous êtes alors considéré comme  un 
+« prestataire de service » (et non un fabricant – voir plus haut). 
+Aucun agrément ni autorisation n’est nécessaire. La visite préalable de l’AFSCA n’est pas nécessaire. 
+ 
+Système de lavage pour la transformation alimentaire 
+Une personne qui fait de la transformation alimentaire doit disposer d’une autorisation ou d’un agrément 
+préalable pour son unité d’établissement, et son système de lavage fait partie de ses processus.  
+ 
+2. COMMENT GARANTIR LA TRAÇABILITE DES EMBALLAGES ? 
+Pour chaque lot produit/nettoyé, il faut pouvoir tracer toutes les pièces du même lot en cas de problème qualité.  
+Ce numéro de lot doit être facile à retrouver, mais pas forcément pour chaque emballage individuellement. Vous 
+pouvez étiqueter le conditionnement secondaire (casier) ou tertiaire (palette)  et indiquer le numéro de lot sur la 
+note d’envoi et la facture.  
+Vous devez être en mesure de retirer du marché tout emballage sur le lot duquel un problème de qualité a été 
+observé. Vous devez par ailleurs envoyer une notification obligatoire à l’AFSCA dans les 48h après la 
+constatation du risque. 
+ 
+3. VERIFICATIONS A FAIRE CHEZ L’OPERATEUR DE REEMPLOI 
+Les élements suivants peuvent être contrôlés chez un opérateur de réemploi  :  
+• Présence d’un registre des produits entrants : le registre des produits entrants reprend toutes les mentions 
+imposées par la législation. 
+• Présence d’un registre des produits sortants : le registre des produits sortants reprend toutes les mentions 
+imposées par la législation.  
+• Traçabilité des produits : l'exploitant dispose d'un système ou des procédures permettant d'établir la 
+relation entre les produits entrants et sortants et permettant leur traçabilité à toutes les étapes de la 
+production, de la transformation et de la distribution.  
+• Tous les documents sont conservés durant 2 années suivant l'expiration de la période de validité du 
+produit concerné ou à défaut minimum 2 ans.  
+• Vous devez disposer d’une procédure de retrait du marché des produits.  
+Préférable mais non obligatoire  : réaliser un test bactériologique sur chaque lot, conserver un échantillon de 
+chaque nettoyage. 
+ 
+  PAGE 8 SUR 8 
+GUIDE DE BONNES PRATIQUES : MUTUALISER UNE INFRASTRUCTURE DE LAVAGE - 2024 
+ 
+4. CERTIFICATS QUE L’OPERATEUR DE REEMPLOI DOIT FOURNIR A SES UTILISATEURS 
+4.1. Une déclaration de conformité 
+En vertu de la directive européenne 1935/2004, l’opérateur de réemploi  doit émettre une déclaration de 
+conformité pour le contact alimentaire. 
+• Une déclaration par type de produit (on peut regrouper par matériau). 
+• Dans une langue nationale ou en anglais. 
+• Sur le modèle officiel fourni par l’AFSCA. 
+• L’opérateur définit lui-même les critères afin de permettre au client de bien comprendre où commence et 
+s’arrête sa responsabilité. 
+• La déclaration mentionne combien de fois le produit peut être réutilisé, selon le fabricant et à partir de quel 
+moment (mesurable) l’opérateur estime que le produit doit être retiré du marché. Il peut s’agir par 
+exemple : 
+• D’un produit visuellement altéré, ébréché ou fendu. 
+• D’une décoloration ou déformation visible. 
+• D’un logo ou marquage effacé (en particulier le sigle « alimentaire »). 
+• De griffes ou opacité du verre (montrer à partir de quel point on juge que le bocal ou la bouteille est 
+trop opaque pour être réemployé). 
+• D’une étiquette permanente mentionnant la date de mise en marché. 
+• On garantit au client qu’il peut réutiliser le contenant XX fois en autonomie en vérifiant les mêmes critères, 
+et qu’il peut nous retourner les contenants en cas de doute. 
+• On explique la procédure de nettoyage, par exemple : 
+• Vérification visuelle et élimination des pièces présentant la moindre trace d’altération . 
+• Enlèvement des éventuelles étiquettes (+ méthode). 
+• Nettoyage à XX degrés, XX minutes, type de produit. 
+• Rinçage à XX degrés, XX minutes. 
+• Séchage : machine, air libre… 
+• Vérification visuelle lors du reconditionnement et élimination de toutes les pièces endommagées . 
+• On présente les conditions d’utilisation autorisées pour le contenant (températures, micro-ondes, 
+chocs, stockage…). 
+• On explique qu’il s’agit d’un contenant de réemploi et l’utilisateur est bien informé que le fabricant ne peut 
+être tenu responsable des altérations non visibles à l’oeil nu (ex : mémoire des chocs) qui auraient pu 
+survenir lors des cycles d’utilisation précédentes du contenant. De même, le fabricant expose clairement 
+les conditions de nettoyage et ne peut pas s’engager à éliminer des particules non visibles à l’oeil nu qui 
+pourraient résulter d’une mauvaise utilisation du contenant préalable au nettoyage par ses soins et que le 
+nettoyage n’aurait pas pu éliminer.  
+• La déclaration de conformité est valable 5 ans, doit être renvoyée à tous les clients tous les 5 ans.  
+• Si on réalise des tests bactériologiques ou en laboratoire de manière régulière, le mentionner. 
+Dans quelles situations cette déclaration n’est-elle pas nécessaire ? 
+• Quand on fournit des contenants à des particuliers. 
+• Quand on fournit des contenants vides à des commerces de détail qui les mettent à disposition des cl ients 
+pour leur propre usage. 
+ 
+4.2. Un carnet de qualité 
+L’AFSCA recommande de tenir à leur disposition un carnet de qualité reprenant  : 
+• Les procédures claires suivies par les collaborateurs (se laver les mains avant chaque opération , etc.). 
+• La réflexion sur tous les dangers potentiels (analyse des risques et prévention mises en place) . 
+• Ce qui est fait en cas de non-respect des bonnes pratiques. 
+• Il est demandé par ailleurs de tenir un registre des résultats du système de contrôle de la qualité . 
+ 

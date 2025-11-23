@@ -32,11 +32,11 @@ class TextScraper():
         self.base_dir = Path(__file__).resolve().parent
         self.project_root = self.base_dir
         # fichier des pdf
-        self.raw_pdf = os.path.join(self.project_root, "raw_pdf_test")
+        self.raw_pdf = os.path.join(self.project_root, "raw_pdf")
         # fichier sortie
         self.output_folder = os.path.join(self.project_root, "before_clean_data")
         # fichier pour les entierement pret
-        self.final_folder = os.path.join(self.project_root, "clean_data_test")
+        self.final_folder = os.path.join(self.project_root, "clean_data")
         
         # cree les fichier si il n existe pas
         os.makedirs(self.raw_pdf, exist_ok=True)
@@ -49,7 +49,7 @@ class TextScraper():
             for a in self.soup.find_all("a", href=True, target="_blank"):
                 href = a["href"]
 
-                if href.lower() and "document" in str(href):
+                if href.lower() or "document" in str(href) or ".pdf" in str(href) or ".docx" in str(href) or "doc_num.php" in str(href):
                     pdf_url = urljoin(self.url, href)
                     self.pdf_urls.append(pdf_url)
         except Exception as e:
@@ -66,8 +66,8 @@ class TextScraper():
             try:
                 request = requests.get(pdf_url, stream=True)
                 request.raise_for_status()
-            except:
-                continue
+            except Exception as e:
+                print("Error web: ", e)
 
             # nom du fichier = dernière partie de l'URL
             if ".docx" in pdf_url or "doc_num.php" in pdf_url:
@@ -247,16 +247,17 @@ class TextScraper():
 
 if __name__ == "__main__":
     # tout les site qu on veut scraper
-    num = int(input("Combien de site a scraper?: "))
+    # peut avoir les url que vous vouler
     urls = [
-        "https://environnement.brussels/pro/gestion-environnementale/gerer-les-dechets/la-gestion-et-la-prevention-des-dechets-de-chantier",
-        "https://environnement.brussels/pro/gestion-environnementale/gerer-les-dechets/comment-gerer-vos-dechets-professionnels-de-la-prevention-levacuation",
-        "https://environnement.brussels/pro/gestion-environnementale/gerer-les-dechets/que-faire-de-vos-dechets-demballage",
-        "https://environnement.brussels/pro/gestion-environnementale/gerer-les-dechets/horeca-et-commerces-alimentaires-conseils-zero-dechet-et-gestion-des-dechets"
+        "https://www.arp-gan.be/fr/les-amendes"
     ]
-    for n in range(num):
-        url = str(input("Votre url: "))
-        urls.append(url)
+
+    if len(urls) == 0:
+        num = int(input("Combien de site a scraper?: "))
+        
+        for n in range(num):
+            url = str(input("Votre url: "))
+            urls.append(url)
     for u in urls:
         scrap = TextScraper(u)
         # telecharge tout les texte
