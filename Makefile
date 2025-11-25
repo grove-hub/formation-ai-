@@ -26,15 +26,15 @@ install:
 
 run:
 	@echo "🚀 Exécution du script en mode interactif..."
-	$(VENV_BIN)/python traitement.py
+	$(VENV_BIN)/python -m src.traitement
 
 query:
 	@echo "🚀 Exécution de la recherche..."
-	$(VENV_BIN)/python traitement.py $(QUERY)
+	$(VENV_BIN)/python -m src.traitement $(QUERY)
 
 convert-pdf:
 	@echo "📄 Conversion des PDFs en TXT..."
-	$(VENV_BIN)/python pdf_to_txt.py
+	$(VENV_BIN)/python -m src.pdf_to_txt
 
 clean:
 	@echo "🧹 Nettoyage..."
@@ -45,6 +45,6 @@ clean:
 
 reset-db:
 	@echo "🗑️  Suppression de la base de données..."
-	rm -rf chroma_db/
+	rm -rf data/chroma_db/
 	@echo "✅ Base de données supprimée !"
 
