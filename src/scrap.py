@@ -294,8 +294,8 @@ if __name__ == "__main__":
     for u in urls:
         scrap = TextScrapper(u)
         # telecharge tout les texte
-        # scrap.download_text()
-        # scrap.pdf_to_txt()
-        # scrap.clean_text()
+        scrap.download_text()
+        scrap.pdf_to_txt()
+        scrap.clean_text()
 
     scrap.clone_verifie()
