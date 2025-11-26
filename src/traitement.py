@@ -23,7 +23,7 @@ class RetrievalPipeline:
 
         #chemin vers clean_data
         self.data_dir = (self.project_root / "data" / "clean_data").resolve()
-    
+        
     def find_category(self, text):
         # trouve la categorie aproximatif
         
@@ -112,10 +112,6 @@ class RetrievalPipeline:
                 metadatas=[{"source": file_id, "categorie": category, "date": date, "chunk_id":idx}]
             )
             new_chunks += 1
-
-        # Affiche combien de nouveaux segments ont été indexés
-        if new_chunks > 0:
-            print(f"{new_chunks} New chunk indexed from {file_path}")
     
     def query_search(self, query_text):
         # Vérifie que la requête n’est pas vide
@@ -153,79 +149,10 @@ class RetrievalPipeline:
             final_result.append(doc_str)
         # Retourne les résultats de la recherche
         return final_result, result
-    
-    def display_results(self, query, response, results):
-        """Affiche les résultats de recherche de manière claire et formatée"""
-        # Vérifier si les résultats sont valides
-        if response is None:
-            print("\n" + "="*100)
-            print("   ERREUR ".center(100))
-            print("="*100)
-            print("\n La requête est vide ! Veuillez saisir une question ou des mots-clés.\n")
-            print("="*100 + "\n")
-            return
-        
-        if not response:
-            print("\n" + "="*100)
-            print("   RECHERCHE SÉMANTIQUE - AUCUN RÉSULTAT ".center(100))
-            print("="*100)
-            print(f"\n Requête : \"{query}\"")
-            print(f"\n Aucun résultat trouvé pour cette requête.\n")
-            print("="*100 + "\n")
-            return
-        
-        print("\n" + "="*100)
-        print("   RECHERCHE SÉMANTIQUE - RÉSULTATS ".center(100))
-        print("="*100)
-        print(f"\n Requête : \"{query}\"")
-        print(f" Nombre de résultats trouvés : {len(response)}")
-        print("\n" + "="*100 + "\n")
-        
-        # Parcourir tous les résultats
-        for i in range(0, 3):
-            metadata = results["metadatas"][0]
-            distance = results["distances"][0]
-            # Calculer le score de similarité (plus c’est proche de 100 %, mieux c’est)
-            similarity_score = max(0, (2 - distance[i]) / 2 * 100)
-            
-            # Déterminer l’emoji en fonction du score
-            if similarity_score >= 70:
-                score_emoji = "🟢"
-            elif similarity_score >= 40:
-                score_emoji = "🟡"
-            else:
-                score_emoji = "🔴"
-            
-            # Nettoyer le texte pour un meilleur affichage
-            cleaned_doc = response[i].replace('\\n', ' ').replace('\n', ' ')  # Remplace les retours à la ligne
-            cleaned_doc = ' '.join(cleaned_doc.split())  # Enlève les espaces multiples
-            
-            print(f"╔═  RÉSULTAT #{i} {'═'*85}")
-            print(f"║")
-            print(f"║   Source      : {metadata[i].get('source', 'N/A')}")
-            print(f"║  {score_emoji} Pertinence  : {similarity_score:.1f}%")
-            print(f"║")
-            print(f"║   Extrait :")
-            print(f"║  {'-'*96}")
-            # Coupe le texte pour un affichage propre (75 caractères par ligne)
-            words = cleaned_doc.split()
-            line = "║  "
-            for word in words:
-                if len(line) + len(word) + 1 > 98:
-                    print(line)
-                    line = "║  " + word + " "
-                else:
-                    line += word + " "
-            if line.strip() != "║":
-                print(line)
-            print(f"║")
-            print(f"╚{'═'*98}\n")
 
 if __name__ == "__main__":
     # Initialise le pipeline de recherche
     retrieval_pipeline = RetrievalPipeline()
-    
-    print(" Indexation des documents...")
     
     # Parcourt tous les fichiers texte dans le dossier 'clean_data' et les indexe
     #base du projet ou ce fichier ce trouve
@@ -239,14 +166,3 @@ if __name__ == "__main__":
     for file in file_list:
         file_path = data_dir / file
         retrieval_pipeline.index_text(file_path)
-    
-    # Demande à l’utilisateur de saisir une requête
-    print("\n" + "="*100)
-    print("   SAISISSEZ VOTRE REQUÊTE ".center(100))
-    print("="*100)
-    query = input("\n Votre question : ").strip()
-    
-    # Exécute la requête sur la collection Chroma
-    final_result, result_data = retrieval_pipeline.query_search(query)
-    # Affiche les résultats de recherche de manière claire
-    retrieval_pipeline.display_results(query, final_result, result_data)
