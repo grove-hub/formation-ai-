@@ -1,6 +1,6 @@
 import requests
 import json
-from traitement import RetrievalPipeline
+from query_search import QuerySearch
 
 # envoye et retourne une reponse du model mistral a la question pose par l utilisateur
 # en moyenne 2 a 3min pour chaque réponse
@@ -9,11 +9,11 @@ class Generation:
         # url du serveur d'ollama sur docker
         self.url = "http://localhost:11434/api/generate"
         # classe des traitement de donne
-        self.pipeline = RetrievalPipeline()
+        self.pipeline = QuerySearch()
 
-    def prompt_augmentation(self, query_text):
+    def prompt_augmentation(self, query):
         # resulta des recherche
-        response, results = self.pipeline.query_search(query_text=query_text)
+        response, results = self.pipeline.query_search_db(query)
 
         # prompt detailer
         prompt =f"""
@@ -39,13 +39,14 @@ class Generation:
                 - Si la réponse n'est pas clairement présente ou déductible des documents, réponds uniquement :
                 "Aucune information pertinente trouvée dans les documents."
 
-                Question : {query_text}
+                Question : {query}
 
                 Ta réponse finale :
         """
         #question et model utiliser
         data = {
             "model":"mistral",
+
             "prompt": prompt
         }
         # récupere la reponse du serveur
@@ -66,9 +67,9 @@ class Generation:
 
 if __name__ == "__main__":
     # question de l utilisateur
-    query_text = input("Question: ")
+    query = input("Question: ")
     # function pour envoyer et recupere la reponse
     generation = Generation()
-    output, result = generation.prompt_augmentation(query_text=query_text)
+    output, result = generation.prompt_augmentation(query)
     # reponse
     print(f"\n Réponse: {output}")
