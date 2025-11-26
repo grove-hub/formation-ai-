@@ -112,43 +112,6 @@ class RetrievalPipeline:
                 metadatas=[{"source": file_id, "categorie": category, "date": date, "chunk_id":idx}]
             )
             new_chunks += 1
-    
-    def query_search(self, query_text):
-        # Vérifie que la requête n’est pas vide
-        if not query_text or query_text.strip() == "":
-            return None
-        
-        # Encode le texte de la requête en un vecteur d’embedding
-        query_embedding = self.model.encode(query_text)
-        # Recherche dans la collection Chroma les segments les plus similaires
-        n_result = 3
-        result = self.collection.query(
-            query_embeddings=[query_embedding],
-            n_results= n_result
-        )
-        
-        # list pour mettre les retour finaux des document
-        final_result = []
-        # reprend les metadata
-        metadatas_dic = result["metadatas"][0]
-        # parcour au nombre de resultat demander
-        for i in range(n_result):
-            # recupere les id des chunk
-            metadata = metadatas_dic[i]
-            idx = metadata["chunk_id"]
-            # fait une recherche des chunk voisin 
-            neighbors = self.collection.get(
-                where={
-                    "chunk_id":{"$in": [idx-1, idx, idx+1]}
-                }
-            )
-            # ajoute les document trouver 
-            doc_str = ""
-            for doc in neighbors["documents"]:
-                doc_str += str(doc)
-            final_result.append(doc_str)
-        # Retourne les résultats de la recherche
-        return final_result, result
 
 if __name__ == "__main__":
     # Initialise le pipeline de recherche
