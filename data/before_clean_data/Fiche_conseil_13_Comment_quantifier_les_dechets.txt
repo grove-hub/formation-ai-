@@ -1,0 +1,385 @@
+ Fiche conseil – déchets professionnels – n°13 
+ 
+ 
+1 
+ 
+Version – Mars 2025 
+ 
+COMMENT QUANTIFIER LES 
+DÉCHETS ?  
+ 
+POURQUOI QUANTIFIER VOS DÉCHETS ?  
+ 
+La quantification des déchets est un exercice nécessaire permettant de prendre en compte la situation 
+réelle de votre entreprise. L’estimation des déchets ne permet pas d’atteindre ces objectifs, car les valeurs 
+obtenues sont susceptibles de s’écarter significativement de votre réalité de terrain. 
+ 
+Quantifier, permettra de : 
+• Mettre en lumière la quantité exacte de déchets produits par votre entreprise 
+• Adopter un plan interne de mesures préventives permettant de réduire les déchets  
+• Définir les équipements de tri nécessaires en fonction des volumes des déchets 
+réellement produits  
+• Maîtriser les coûts de gestion des déchets 
+• Réaliser des gains financiers grâce à une réduction des poubelles résiduelles et une 
+augmentation des fractions recyclables 
+ 
+ 
+ÉTAPES-CLÉS  
+ 
+ 
+ 
+1. Analyser vos contrats de collecte  
+ 
+Analyser les factures et les détails de vos contrats de collecte, en ayant une attention particulière sur : 
+• Le nombre et le volume des conteneurs  
+• La fréquence de collecte et le prix de collecte des conteneurs  
+• Les coûts mensuel et annuel de gestion des déchets 
+ 
+Exemple : Le contrat  de collecte d’une maison de retraite prévoit trois collectes 
+hebdomadaires, de trois conteneurs (enterrés) de déchets résiduels de 5 000 L. La quantité 
+collectée annuelle est donc de 860 000 L. Le coût total annuel pour la gestion des déchets 
+résiduels est de 17 000 €.   
+ 
+NB : Selon votre collecteur, les factures sont susceptibles d’être difficilement compréhensibles. Leur analyse 
+pourrait nécessiter un temps substantiel. 
+ 
+ 
+ 
+ 
+Analyser les contrats 
+de collecte
+Organiser des pesées 
+de déchets
+Déterminer les besoins 
+réels en équipements 
+de tri interne et externe
+Adapter et optimiser 
+les contrats de collecte 
+ Fiche conseil – déchets professionnels – n°13 
+ 
+ 
+2 
+ 
+Version – Mars 2025 
+ 
+2. Organiser des pesées de déchets 
+ 
+Préparer la campagne de pesée 
+•  
+• Consulter et faire adhérer les équipes / acteurs-clés concernés  
+• Déterminer les différentes zones de production de déchets (bâtiment, étage, cuisine, 
+etc) selon une perspective mutli-flux (déchets alimentaires, cartons, etc).  
+• Désigner un responsable par zone de production de déchets  et les personnes (ou le 
+sous-traitant) qui exécuteront les pesées sur le terrain.  
+• Décider d’une ou de plusieurs période(s) représentative(s) pour la campagne de 
+pesée (quotidiennement, pendant une quinzaine de jours minimum, à divers moments 
+de l’année en fonction du volume de production – saison, congés, pics d’activité). 
+• Équiper les personnes concernées avec du matériel de pesée pour chaque zone de 
+production (balances, pesons).  
+• Élaborer et distribuer des tableaux d’encodage par zone de production des déchets 
+(bâtiment, étage, cuisine).  
+ 
+Mettre en œuvre la campagne de pesée  
+ 
+• Chaque jour, peser les déchets produits dans chaque zone et tels que triés 
+Ou pour aller plus loin : vider les conteneurs, trier les déchets, et ensuite peser chaque 
+type de déchet séparément. 
+• Décrire les types de déchets et les erreurs de tris. 
+• Accompagner sur le terrain et fournir un appui si nécessaire aux équipes. 
+ 
+Convertir les résultats en volume  
+ 
+Objectif : déterminer les volumes nécessaires des équipements internes de tri et des équipements 
+externes de collecte, en partant des quantités moyennes calculées à l’issue des pesées.  
+→ Convertir ces quantités de déchets (kg) en volume (L) en fonction des densités 
+moyennes1 de ces différents flux de déchets. 
+→ Les coefficients permettant de convertir le poids en volume est en moyenne de : 
+• 0,7 pour les biodéchets 
+• 0,025 pour les PMC 
+• 0,05 pour les cartons 
+ 
+NB : Les coefficients de conversion sont indicatifs. Ils permettent de se rapprocher de la situation réelle, 
+mais les densités varient en fonction des pratiques de tri (ex : l’écrasement des cartons ou des cannettes.) 
+ 
+Exemple : Tableau de pesées avec conversion du poids des déchets en volume utile dans un restaurant. 
+ 
+Date de 
+la pesée 
+Zone de 
+production  
+Nb. 
+repas  
+Biodéchets 
+Poids (kg) 
+Biodéchets 
+Volume (L)  Remarques PMC  
+Poids (kg) 
+PMC 
+Volume (L)  Remarques  Cartons 
+Poids (kg) 
+Cartons 
+Volume (L)  Remarques 
+14/03/24 
+ Cuisine + 
+retour 
+d'assiette  
+350 65 kg 93 L  
+(= 65/0,7) 
+Restes des 
+repas 10 kg 400 L 
+(=10/0,025) 
+Emballages 
+bouteilles 13 kg 260 L 
+(= 13/0,05) 
+Caisses de 
+livraison  
+15/03/24 
+Cuisine + 
+retour 
+d'assiette 
+400 54 kg 77 L  
+(= 54/0,7) 
+Restes des 
+repas 7 kg 280 L 
+(=7/0,025) 
+Pots de 
+yaourt 30 kg 600 L 
+(= 30/0,05) Décartonnage 
+. 
+ 
+ 
+ 
+ 
+ 
+1 La masse volumique d'une substance, aussi appelée densité volumique de masse, est une grandeur physique qui caractérise la ma sse de cette 
+substance par unité de volume. Formule: Densité Volumique (kg/L) = Masse (kg) / Volume (L)  
+ Fiche conseil – déchets professionnels – n°13 
+ 
+ 
+3 
+ 
+Version – Mars 2025 
+ 
+ 
+3. Déterminer les besoins réels en équipements de tri interne et externe 
+ 
+Extrapoler les données  
+• Calculer des moyennes de production par unité (personne/employé/élève/repas…) pour les 
+différentes catégories de déchets.            
+• Estimer la production quotidienne, hebdomadaire et annuelle pour les différents flux , par 
+zone de production et pour l’ensemble de l’organisation. 
+ 
+Afin de répondre aux éventuelles fluctuations annuelles et pour s’assurer d’une marge dans les 
+volumes des équipements de tri interne et externe, il est recommandé de rajouter + /- 15% au 
+volume de déchets calculé.   
+ 
+Déterminer les volumes des équipements  
+• Équipements de tri interne par zone de production de déchets  
+• Équipements de collecte externe  
+ 
+→ Voir fiche n°4 – « Matériel et îlots poubelles  » 
+→ Voir fiche n°5 – « Stockage final des déchets  »             
+ 
+Déterminer les fréquences de collecte  
+• Définir la fréquence de collecte en fonction de l’offre de votre collecteur  et de vos volumes de  
+déchets réels calculés.  
+ 
+ 
+Exemple : Tableau d’extrapolation des volumes hebdomadaires de déchets produits et la 
+collecte nécessaire, dans la cuisine d’un restaurant collectif. 
+ 
+ Volumes hebdomadaires de déchets produits Offre du collecteur 
+ 
+Lundi Mardi Mercredi Jeudi Vendredi Total 
+hebdomadaire 
+Volume et 
+quantités des 
+conteneurs  
+Fréquence de 
+collecte 
+Déchets 
+résiduels 30 L 16 L 24 L 27 L 11 L 108 L 1 conteneur de 
+240 L 
+1x toutes les 
+deux semaines2 
+Biodéchets 92 L 77 L 95 L 66 L 60 L 390 L 3 conteneurs de 
+140 L 2x semaine3 
+PMC  350 L 200 L 330 L 250 L 120 L 1250 L 2 conteneurs de  
+660 L 1x semaine 
+Papier/carton 200 L 380 L 120 L 80 L 300 L 1080 L 1 conteneur de 
+1100 L 1x semaine 
+ 
+Recommandations pour une mise en place optimale du tri  
+ 
+• Créer et encadrer des procédures détaillées de tri adaptées aux différentes zones de 
+production (bâtiment, étage, cuisine…), en concertation avec les équipes concernées.  
+• Former tous les acteurs concernés (élèves, employés, services de nettoyage…) à 
+l’application des procédures de tri et intégrer ces procédures dans des supports de 
+communication (vade-mecum, syllabus, chartes internes de fonctionnement …).  
+• Équiper les zones de production d’un matériel de tri adéquat  (volume de poubelles 
+ajusté et équipements ergonomiques).   
+ 
+→ Voir fiche n°7 – « Comment sensibiliser votre personnel et vos visiteurs  » 
+ 
+ 
+2 Grâce au tri des biodéchets , les potentielles nuisances d’odeur dans les poubelles résiduelles sont évitées, ce qui permet d’espacer la collecte 
+des déchets résiduels à 1x toutes les deux semaines et ainsi réduire la facture globale.  
+3 Dans ce cas-ci, l’entreprise a décidé de passer à une collecte bi -hebdomadaire pour éviter d’éventuelles nuisances d’odeur .  
+ Fiche conseil – déchets professionnels – n°13 
+ 
+ 
+4 
+ 
+Version – Mars 2025 
+ 
+ 
+4. Adapter et optimiser les contrats de collecte  
+ 
+Adapter le contrat de collecte 
+ 
+• Comparer les volumes des équipements de collecte actuels, avec les volumes réels 
+de déchets produits (résultats des extrapolations des pesées).  
+• Créer un cahier des charges détaillé  récapitulant les besoins réels (fréquences et 
+volumes des équipements de collecte) par point de collecte dans le bâtiment.  
+• Demander des offres de prix à différents collecteurs. 
+ 
+Valider le contrat de collecte optimisé 
+ 
+• Faire  valider le scénario d’optimisation auprès des personnes-clés et la direction. 
+• Adapter le contrat de collecte et réaliser les gains financiers. 
+ 
+ 
+ 
+Exemple 1  : Le contrat de collecte d’une maison de retraite prévoit trois collectes 
+hebdomadaires, de trois conteneurs de déchets résiduels de 5000 L, correspondant 
+à un total annuel de 860 000 L. Le coût total annuel pour la gestion des déchets 
+résiduels est de 17 000 €.  
+ 
+Les pesées des déchets résiduels montrent pourtant, par extrapolation, une production 
+annuelle de 130 000 L, soit environ 15 fois moins . Une adaptation du contrat de 
+collecte permettra de réaliser 13 000 € d’économies annuelles (par la réduction des 
+équipements de collecte des déchets résiduels et l’augmentation des équipements de 
+collecte pour les fractions recyclables ). Grâce à ce travail d’optimisation, l’entreprise 
+passe d’un coût annuel de traitement de déchets intitial de 17 000 € à un coût final de 
+4 000 €. 
+ 
+ 
+ 
+Exemple 2 : Tableau d’optimisation de gestion des déchets pour les trois principaux 
+bâtiments d’un établissement spécialisé dans l’enseignement des métiers de bouche :  
+ 
+ 
+ 
+    Résiduel Cartons PMC Verre Biodéchets Total 
+Nombre de 
+conteneurs 
+de collecte 
+Situation actuelle 30 9 4 5 0 48 
+Situation après optimisation 10 13 12 11 18 64 
+Différentiel -20 +4 +8 +6 +18 +16 
+Coûts 
+annuels 
+Situation actuelle  43 385,76 € 
+Situation après optimisation  21 621,25 € 
+ Economies réalisées 21 764,51 € 
+ 
+% de réduction des coûts 
+totaux de gestion des déchets 49,83% 
+ 
+ 
+ 
+ 
+ 
+ Fiche conseil – déchets professionnels – n°13 
+ 
+ 
+5 
+ 
+Version – Mars 2025 
+BONNES PRATIQUES 
+ 
+Référent de tri   
+ 
+ 
+Désigner et former un ou des référent(s) de tri par zone de production de déchets qui 
+sera en charge de la : 
+• Coordination et suivi général du tri : contrôle qualité du tri, interpellation du 
+personnel sur des soucis constatés, mise en place de formations, etc. 
+• Comptabilité des déchets : Organiser les pesées et adapter le protocole de tri.  
+• Mettre en place une stratégie annuelle d’amélioration de gestion des déchets 
+comme outil dynamique, permettant d’adapter le contrat de collecte en fonction des 
+évolutions notables dans la prodcution de déchets.  
+ 
+→ Inscrire ces tâches dans la fiche du poste de la personne concernée et lui 
+attribuer un temps déterminé pour la réalisation de cette mission.  
+ 
+ Campagnes annuelles 
+• Organiser annuellement des campagnes de pesées pour suivre l’évolution des 
+quantités produites. 
+• Planifier les pesées simultanément dans toutes les zones de production de déchets, 
+sur une durée de 15 jours minimum.  
+• En fonction des résultats obtenus et des évolutions dans les modes de gestion des 
+déchets, adapter les procédures écrites de tri et les volumes de collecte externe 
+pour les différents flux de déchets.  
+• Déterminer des mesures de prévention permettant de diminuer les flux de déchets à 
+trier (conditionnement des emballages, produits consignés, etc…). 
+ 
+LE CAS PARTICULIER DES GRANDES STRUCTURES  
+Si votre structure  comporte de nombreuses unités  (plusieurs bâtiments  ou sites de production), les 
+différentes étapes-clé décrites dans cette fiche devront être effectuées pour chaque unité.  
+ 
+Actions spécifiques aux grandes structures :  
+• Coordonner efficacement l’organisation des pesées  : réunions de planning, 
+diffusion d’un fichier de pesées pré-rempli.  
+• Désignation d’un référent pour chaque bâtiment/unité de production qui récoltera 
+et agrégera les informations transmises.  
+• Cartographier les équipements :  
+→ Equipements internes de tri : cartographier l es emplacement des 
+poubelles de tri au sein de tous les bâtiments.   
+→ Equipements externes de collecte : cartographier les différentes  zones 
+de regroupement de conteneurs qui seront évacués par le collecteur.  
+• Concertation entre les différentes unités  et prise de  décisions communes 
+d’optimisation et d’adaptation. 
+ Fiche conseil – déchets professionnels – n°13 
+ 
+ 
+6 
+ 
+Version – Mars 2025 
+ 
+ 
+ 
+CONTACT & SUPPORT 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Pour toute question, contactez le Helpdesk 
+à l’adresse : recyclepro@environnement.brussels 
+ou laissez un message au +32 2 775 75 93. 
+ 
+Autres fiches Conseil Déchets consultables : 
+• Fiche n°3 - Obligations de tri des déchets professionnels  
+• Fiche n°4 – Matériel et îlots poubelles  
+• Fiche n°5 – Stockage final des déchets  
+• Fiche n°7 - Comment sensibiliser votre personnel et vos visiteurs  
+• Fiche n°22 - Comment donner une seconde vie à vos déchets  
+• Check-list – Auto-diagnostic déchets profesionnels  
+ 
+ 
+LIENS UTILES 
+ 
+ 
+• Pour consulter l’une des fiches mentionnées ci-dessus : Outils et documents utiles pour 
+la gestion et le tri de vos déchets 
+• Pour un focus sur les conseils zéro déchet pour les commerces et Horeca  
+• Plus d’infos sur le tri des biodéchets : le tri des biodéchets pour les professionnels et 
+Q&A Biodéchets 
+• Liste non exhaustive de collecteurs de biodéchets enregistrés et consultables sur le site 
+de Bruxelles-Environnement. 
+ 
+ 

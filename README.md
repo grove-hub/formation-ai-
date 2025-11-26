@@ -1,198 +1,131 @@
-# 🔍 Système de Recherche Sémantique pour Textes Juridiques
+# Systeme de Recherche Semantique pour Textes Juridiques
 
-Ce projet implémente un pipeline de recherche sémantique (RAG) utilisant ChromaDB et SentenceTransformers pour indexer et interroger des documents juridiques.
+Ce projet implemente un pipeline de recherche semantique (RAG) utilisant ChromaDB et SentenceTransformers pour indexer et interroger des documents juridiques.
 
-> 🚀 **Nouveau ?** Consultez le [Guide de démarrage rapide](QUICKSTART.md)
+> **Nouveau ?** Consultez le [Guide de demarrage rapide](docs/QUICKSTART.md)
 
-## 🎯 Fonctionnalités
+## Fonctionnalites
 
-✅ **Conversion PDF → TXT** : Extrait automatiquement le texte de vos PDFs  
-✅ **Indexation intelligente** : Découpe et indexe vos documents avec des embeddings  
-✅ **Recherche sémantique** : Trouve les passages pertinents même sans mots-clés exacts  
-✅ **Affichage élégant** : Résultats formatés avec scores de pertinence  
-✅ **Évite les doublons** : N'indexe pas deux fois le même contenu  
-✅ **Multiple modes** : Interactif ou ligne de commande
+- **Conversion PDF -> TXT** : Extrait automatiquement le texte de vos PDFs
+- **Indexation intelligente** : Decoupe et indexe vos documents avec des embeddings
+- **Recherche semantique** : Trouve les passages pertinents meme sans mots-cles exacts
+- **Affichage elegant** : Resultats formates avec scores de pertinence
+- **API REST** : Interface API avec FastAPI pour integration frontend
+- **Evite les doublons** : N'indexe pas deux fois le meme contenu
 
-## 📋 Prérequis
+## Prerequis
 
-- Python 3.8 ou supérieur
+- Python 3.8 ou superieur
 - pip
 
-## 🚀 Installation rapide
+## Installation rapide
 
-### Avec Make (recommandé)
+### Avec Make (recommande)
 
 ```bash
-# Installer toutes les dépendances
+# Installer toutes les dependances
 make install
 
 # Activer l'environnement virtuel
 source venv/bin/activate
 
-# Exécuter le script
+# Executer le script
 make run
 ```
 
 ### Installation manuelle
 
 ```bash
-# Créer un environnement virtuel
+# Creer un environnement virtuel
 python3 -m venv venv
 
 # Activer l'environnement
 source venv/bin/activate
 
-# Installer les dépendances
+# Installer les dependances
 pip install -r requirements.txt
-
-# Exécuter le script
-python traitement.py
 ```
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 formation-ai-/
-├── traitement.py          # Script principal de recherche
-├── pdf_to_txt.py         # Script de conversion PDF → TXT
-├── requirements.txt       # Dépendances Python
-├── Makefile              # Commandes d'automatisation
-├── README.md             # Documentation
-├── raw_pdfs/             # Dossier pour les PDFs sources (à créer)
-├── clean_data/           # Dossier contenant les fichiers texte indexés
-│   └── law_text2.txt
-├── chroma_db/            # Base de données vectorielle (créée automatiquement)
-└── venv/                 # Environnement virtuel Python
+├── src/                  # Code source de l'application
+│   ├── bridge.py         # API FastAPI
+│   ├── reponse.py        # Logique de generation de reponse
+│   ├── traitement.py     # Pipeline RAG (Indexation & Recherche)
+│   ├── scrap.py          # Scraper web
+│   └── pdf_to_txt.py     # Convertisseur PDF vers TXT
+├── data/                 # Donnees de l'application
+│   ├── raw_pdfs/         # PDFs sources
+│   ├── clean_data/       # Fichiers TXT indexes
+│   ├── chroma_db/        # Base de donnees vectorielle
+│   └── base_dechets.json # Base de connaissances JSON
+├── docs/                 # Documentation
+│   ├── EXEMPLES.md
+│   └── QUICKSTART.md
+├── requirements.txt      # Dependances
+├── Makefile              # Automatisation
+└── README.md             # Ce fichier
 ```
 
-## 💡 Utilisation
+## Utilisation
 
-### Étape 1 : Convertir les PDFs en TXT (optionnel)
+### Etape 1 : Convertir les PDFs en TXT (optionnel)
 
-Si vous avez des fichiers PDF à indexer :
-
-1. Placez vos fichiers PDF dans le dossier `raw_pdfs/`
+1. Placez vos fichiers PDF dans le dossier `data/raw_pdfs/`
 2. Lancez la conversion :
 
 ```bash
 make convert-pdf
+# ou
+python -m src.pdf_to_txt
 ```
 
-Le script `pdf_to_txt.py` :
-- ✅ Lit tous les PDFs du dossier `raw_pdfs/`
-- ✅ Extrait le texte de chaque page
-- ✅ Crée des fichiers TXT dans `clean_data/`
-- ✅ Affiche des statistiques détaillées
+### Etape 2 : Recherche semantique (CLI)
 
-### Étape 2 : Recherche sémantique
+Le script `src/traitement.py` permet d'interroger la base de donnees.
 
-Le script `traitement.py` :
-1. Indexe automatiquement tous les fichiers `.txt` du dossier `clean_data/`
-2. Découpe les textes en chunks de 500 caractères avec 50 caractères de chevauchement
-3. Génère des embeddings pour chaque chunk
-4. Permet de faire des recherches sémantiques
-
-### Méthodes de recherche :
-
-**1. Mode interactif (par défaut)**
+**Mode interactif :**
 ```bash
 make run
-# Le système vous demandera de saisir votre question
+# ou
+python -m src.traitement
 ```
 
-**2. Avec une requête en ligne de commande**
+**Requete unique :**
 ```bash
-python traitement.py "quelle autorité est responsable de la gestion des déchets ?"
+make query QUERY="quelle autorite est responsable ?"
+# ou
+python -m src.traitement "quelle autorite est responsable ?"
 ```
 
-**3. Avec le Makefile**
-```bash
-make query QUERY="votre question ici"
-```
+### Etape 3 : Lancer l'API (Backend)
 
-### Validation automatique :
-- ✅ Le système vérifie que la requête n'est pas vide
-- ✅ Affiche un message d'erreur clair si la requête est invalide
-- ✅ Affiche les 3 meilleurs résultats avec un score de pertinence
-
-## 🔧 Commandes Make disponibles
-
-- `make install` - Installation complète avec environnement virtuel
-- `make convert-pdf` - Convertit les PDFs en TXT (dossier raw_pdfs/)
-- `make run` - Exécution du script en mode interactif
-- `make query QUERY="..."` - Recherche avec une requête spécifique
-- `make clean` - Nettoyage de l'environnement et fichiers temporaires
-- `make reset-db` - Réinitialisation de la base de données
-- `make help` - Affiche l'aide
-
-## 📦 Dépendances principales
-
-- **chromadb** : Base de données vectorielle
-- **sentence-transformers** : Génération d'embeddings
-- **numpy** : Calculs numériques
-- **pypdf** : Extraction de texte depuis des PDFs
-
-## 🎯 Exemples de recherche
-
-**Exemple 1 : Mode interactif**
-```bash
-make run
-# Puis saisir : "quelle autorité est responsable de la gestion des déchets ?"
-```
-
-**Exemple 2 : Ligne de commande**
-```bash
-make query QUERY="qui est responsable de l'application des sanctions ?"
-```
-
-**Exemple 3 : Directement avec Python**
-```bash
-python traitement.py "quelles sont les obligations des États membres ?"
-```
-
-Les résultats affichent :
-- 🟢 Score vert (≥70%) : Très pertinent
-- 🟡 Score jaune (40-69%) : Moyennement pertinent
-- 🔴 Score rouge (<40%) : Faiblement pertinent
-
-## 🔄 Workflow complet
-
-### Scénario : Indexer et rechercher dans des documents PDF
+Pour utiliser l'application via une interface web ou un autre client :
 
 ```bash
-# 1. Installation
-make install
-
-# 2. Placer vos PDFs dans le dossier raw_pdfs/
-# (Glissez-déposez vos fichiers PDF dans raw_pdfs/)
-
-# 3. Convertir les PDFs en TXT
-make convert-pdf
-
-# 4. Rechercher dans vos documents
-make run
-# Ou avec une requête directe :
-make query QUERY="votre question ici"
-
-# 5. (Optionnel) Réinitialiser la base de données
-make reset-db
+uvicorn src.bridge:app --reload
 ```
+L'API sera accessible sur `http://127.0.0.1:8000`.
 
-### Workflow de mise à jour
+## Commandes Make disponibles
 
-Quand vous ajoutez de nouveaux documents :
+- `make install` - Installation complete
+- `make convert-pdf` - Convertit les PDFs en TXT
+- `make run` - Mode interactif CLI
+- `make query QUERY="..."` - Recherche CLI
+- `make clean` - Nettoyage
+- `make reset-db` - Reinitialisation de la base de donnees
 
-```bash
-# Ajouter nouveaux PDFs dans raw_pdfs/
-make convert-pdf  # Convertir les nouveaux PDFs
-make run          # Les nouveaux TXT seront automatiquement indexés
-```
+## Dependances principales
 
-Le système évite les doublons automatiquement !
+- **chromadb** : Base de donnees vectorielle
+- **sentence-transformers** : Generation d'embeddings
+- **fastapi** : Framework API
+- **pypdf** : Extraction PDF
 
----
+## Documentation
 
-## 📚 Documentation supplémentaire
-
-Pour des exemples détaillés et des cas d'usage, consultez [EXEMPLES.md](EXEMPLES.md).
-
+- [Exemples de recherche](docs/EXEMPLES.md)
+- [Guide de demarrage](docs/QUICKSTART.md)

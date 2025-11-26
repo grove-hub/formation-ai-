@@ -1,0 +1,422 @@
+ 
+PAGE 1 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+PROCÉDURES DE GESTION  
+D’UN COMPTOIR PRODUITS FRAIS  
+La mise en place d’un  comptoir avec des produits frais (crèmerie /produits laitiers, fromages, 
+charcuterie, préparations traiteur… ) dans un commerce alimentaire demande des précautions 
+spécifiques. Ce document compile différentes procédures utiles pour vous inspirer lors de la mise 
+en place  d’un comptoir à la découpe  afin d’éviter au maximum les déchets d’emballages . Il 
+présente des pratiques à adopter pour respecter des exigences en sécurité alimentaire. Pour 
+consulter l’ensemble des exigences en sécurité alimentaire, rendez-vous sur le site de l’AFSCA 
+(→Professionnels → Autocontrôle). En fin de document, un pense-bête prêt à être imprimé aidera 
+le responsable du comptoir à suivre ces procédures. 
+Ce document a été réalisé sur la base de procédures appliquées par La Vivrière, lauréat de 
+l’appel à projets 2018 Commerces alimentaires et Horeca zéro déchet. Merci à eux pour leur 
+partage ! 
+Il a été relu et révisé par Brufotec, une  asbl qui accompagne les PME 
+bruxelloises actives dans le secteur alimentaire à la mise en place et au suivi 
+des normes en matière de sécurité et d’hygiène alimentaire ainsi qu’en 
+alimentation durable. Pour plus d’informations : http://www.brufotec.be. 
+ 
+1. TRAÇABILITÉ DES LOTS DE PRODUITS ALIMENTAIRES 
+Chaque lot de produit alimentaire en vente doit être traçable. Cela signifie que vous devez être 
+capable de retracer le cheminement d'un produit à travers toutes les étapes de la distribution. A 
+condition que l’établissement bénéficie des assouplissements en matière de traçabilité1, 
+l’obligation d’identification et d’enregistrement des produits (registre d’entrée) peut être limitée à 
+la tenue des bons de livraison ou autres documents d’accompagnement, avec les données 
+obligatoires suivantes :  
+o Le nom du fournisseur  
+o La date de livraison/d’achat  
+o Le nom des produits  
+o L’identification des produits pour pouvoir distinguer les produits de même nature : numéro 
+de lot, DLC/DDM, date de production ou référence d’un document d’accompagnement ; 
+o La quantité des produits 
+ Si ces données obligatoires ne figurent pas sur les bons de livraison ou sur le s 
+autres documents d’accompagnement, elles peuvent être ajoutées à la main.  
+Les bons de livraison et autres documents d’accompagnement sont classés par ordre 
+chronologique (obligatoire) et par fournisseur (facultatif). Ils sont conservés pendant au 
+minimum 6 mois (2 ans si vous ne bénéficiez pas des assouplissements). 
+ 
+1 La traçabilité assouplie peut être appliquée si vous commercialisez des denrées alimentaires et que 
+• soit vous les livrez uniquement au consommateur final 
+• soit vous livrez au maximum 30 % de votre chiffre d’affaires dans un rayon de 80 km à d’autres 
+établissements. (http://www.afsca.be/autocontrole-fr/assouplissements/tracabilite/) 
+ 
+PAGE 2 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+Si vous ne remplissez pas les conditions pour bénéficier d’assouplissements en matière de 
+traçabilité, vous devrez respecter les exigences de traçabilité reprises sur ce document de 
+l’AFSCA. 
+2. DLC et DDM 
+En ce qui concerne les stocks, le responsable du comptoir frais dresse un inventaire 
+hebdomadaire des lots en stocks pour anticiper les dates limites de consommation (DLC) et de 
+durabilité minimale (DDM) . Les produits qui dépassent la DLC sont retirés du stock  et doivent 
+être jetés. Les produits qui dépassent la DDM sont retirés du stock et peuvent être donnés à des 
+clients ou des associations.  
+Le principe First Expired First Out (FEFO) doit toujours être respecté dans la gestion des stocks. 
+Cela signifie que les produits dont la DLC est la plus proche sont positionnés de sorte à être pris 
+en premier. 
+Par ailleurs, il est nécessaire de veiller à l’ouverture d’un lot de produit à la fois dans le stock 
+et 2 lots différents d’un même produit ne sont jamais mélangés. 
+Lors du remplissage des contenants, les DLC sont vérifiées. 
+DLC (Date Limite de Consommation)  signifie « à 
+consommer jusqu’au… ». Cela concerne les denrées très 
+périssables microbiologiquement (viandes, poissons, œufs, 
+laitages…). Ces produits se trouvent essentiellement dans 
+les rayons réfrigérés des magasins. Une fois la date 
+dépassée, ces aliments ne peuvent plus être vendus. 
+DDM (Date de Durabilité Minimale)  signifie « à 
+consommer de préférence avant le (ou fin) ». C’est la date 
+avant laquelle il est préférable de consommer les produits, 
+qui restent comestibles au -delà de cette date (riz, pâtes, 
+biscuits secs…), à condition d’être conservés dans de 
+bonnes con ditions et que leur emballage ne soit pas 
+endommagé. Jusqu’à cette date, le fabricant vous garantit 
+que son produit est sûr et de qualité. Après cette date, sa 
+qualité organoleptique n’est plus garantie , mais le produit 
+ne comporte pas un danger pour la santé publique et il peut 
+toujours être vendu. 
+ 
+PAGE 3 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+3. DÉTECTION DES RISQUES 
+La détection des produits non conformes peut s'effectuer à plusieurs moments clés : 
+- À la réception des produits 
+- À la mise en rayon 
+- Lors d'un contrôle que le personnel effectue en magasin 
+- À la suite de la plainte d'un client 
+- À la suite du relais d'information d'un fournisseur 
+ 
+4. RÉCEPTION DES PRODUITS 
+4.1. Consignes à la réception des produits 
+ 
+1. Vérifier qu’il n’y a pas eu d’erreur dans la livraison  : le bon de commande correspond-il 
+aux types et aux quantités de produits livrés ? 
+Le bon de livraison est gardé et stocké dans la bonne farde afin de pouvoir le comparer 
+avec la facture par la suite. Les produits sont encodés dans le tableau de réception des 
+produits ou dans le système de caisse (selon ce qui est applicable dans votre commerce). 
+ 
+2. Vérifier l'intégrité des emballages et l'aspect des produits. Mettre à l'écart les produits 
+dont l'emballage ne serait pas conforme (ouverts  / endommagés) ou les produits qui 
+semblent en in conformité (odeur ou couleur anormale , produits congelés qui sont 
+décongelés, etc.). 
+ 
+3. Vérifier les températures  de conservation préconisée s des contenants à chaque 
+réception, à l’aide d’un thermomètre portable. Les températures sont toujours référencées 
+dans les documents de réception des produits. 
+La température ne peut pas dépasser de la température préconisée de 3°C ou plus. 
+ 
+ 
+ 
+     Note :  Si, lors des étapes 1, 2 et 3, les produits ne sont pas conformes, refuser les produits ou, 
+si le livreur n’est plus présent, les bloquer et remplir le «  Document de non -conformité (voir 
+Annexe 1) et le « Formulaire de réclamation au fournisseur » (voir Annexe 2) en double (pour le 
+magasin et pour le fournisseur). 
+Réception - checks:  
+-Bon de livraison 
+- Température 
+- Aspect emballage
+- qualité 
+- DLC/DDM
+- hygiène du 
+transporteur
+CONFORME : mise en 
+stock et en rayon
+Contrôle quotidien 
+de la DLC
+DLC éloignée (>4 
+jours) : vente au 
+client
+DLC proche (≤ 4 
+jours) : promotion 
+du produit
+DLC atteinte : 
+retirer de la vente
+NON-CONFORME : 
+remplir le "formulaire 
+de réclamation 
+fournisseur" et envoyer 
+au fournisseur 
+PAGE 4 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+4. Vérifier les DLC/DDM des produits (et les encoder dans le fichier correspondant). 
+ 
+5. Vérifier la conformité des produits avant leur rangement dans un espace à leur 
+température de conservation préconisée pour leur stockage. 
+ 
+6. Mise en rayon dans le comptoir en respectant le FEFO. 
+Si des produits non conformes sont détectés avant la mise en rayon : 
+- Les produits non conformes sont refusés 
+- Transmission des éléments observés auprès du fournisseur des produits via le tableau 
+de non-conformité et préciser avec le fournisseur les actions qu'il met en place pour éviter 
+que cela se reproduise 
+- Suivre l'efficacité des actions mise en place par le fournisseur 
+- Enregistrer les anomalies observées via le tableau de non-conformité 
+5. MISE EN RAYON ET NETTOYAGE 
+5.1. Suivi des produits en magasin 
+L’emballage du produit livré doit notamment permettre d’informer le consommateur sur : 
+- La dénomination de la denrée 
+- Les ingrédients/composantes du produit 
+- La quantité de certains ingrédients ou catégories d’ingrédients spécifiques 
+- Quantité nette de denrée alimentaire 
+- DLC ou DDM du produit 
+- Conditions de conservation et d’utilisation 
+- Nom et adresse du producteur 
+- Pays d’origine 
+- Déclaration nutritionnelle 
+L’UE a sorti un système simple d’utilisation pour récupérer les informations obligatoires à mettre 
+sur les étiquettes : Système d’information sur l’étiquetage des denrées alimentaires 
+5.2. Vérifier la DLC / DDM des lots en vente 
+1. Si DLC/DDM valide et éloignée (> 4 jours) : laisser le produit en vente. 
+2. Si DLC/DDM valide mais proche (≤ 4 jours) : mettre le produit en avant pour le vendre 
+3. Si DLC/DDM le lendemain : retirer le produit de la vente à la fermeture du magasin, noter 
+son retrait et contacter une organisation d’aide alimentaire (exemple  : Bourse Aux Dons 
+ou les services d’aide alimentaire connus) pour assurer une consommation expresse et 
+éviter le gaspillage alimentaire. Jeter le produit s’il ne peut pas être écoulé. 
+   
+PAGE 5 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+5.3. Remplissage des contenants de présentation 
+➢ Si nécessaire, les contenants sont remplis avec les marchandises présentes dans le stock. 
+➢ S’il reste dans le stock le même lot de produit, remplissez le contenant avec le reste du 
+lot. 
+➢ Si un nouveau lot doit être entamé, nettoyez le contenant avant de le remplir avec le 
+nouveau lot. 
+Chaque jour, vérifier l’état des produits frais, des contenants et nettoyer les ustensiles utilisés 
+pour servir les produits. 
+ 
+5.4. Nettoyage du comptoir, des contenants de présentation et ustensiles de 
+découpe et de service 
+Les contenants de présentation doivent être nettoyés à chaque changement de lot de 
+produit.  
+L’hygiène du comptoir est suivie rigoureusement. La gestion d’un comptoir frais entraîne des 
+souillures lors du service et des manipulations (prêtez une attention particulière aux produits 
+liquides).  
+Chaque jour, nettoyez le comptoir et les ustensiles de découpe et de service (couteaux, louches, 
+etc.). 
+ 
+Étapes du nettoyage : 
+1. Nettoyer à l’eau chaude avec un détergent vaisselle (biodégradable idéalement) ; 
+2. Rincer entièrement ; 
+3. Sécher soigneusement ; 
+4. Indiquer les informations sur le nettoyage dans les tableaux de nettoyage qui reprennent 
+les informations suivantes : 
+o Nom de l’opérateur 
+o Date de nettoyage 
+o Changement de lot de produit 
+ 
+➔ Voir exemple de tableau en Annexe 3  
+A noter que l ’enregistrement des nettoyages quotidiens n’est pas obligatoire à condition que le 
+responsable du magasin s’assure que son équipe soit bien consciente de la nécessité du 
+nettoyage quotidien. Dans ce cas, un enregistrement des nettoyages hebdomadaires (et m oins 
+fréquents) permet de vérifier que cela a bien été fait et de rassurer le client. 
+Il est nécessaire d’avoir aussi un plan de nettoyage qui décrit précisément pour chaque 
+surface/outil à nettoyer : comment le nettoyer, avec quel produit, à quel dosage d e produit et à 
+quelle fréquence. 
+ 
+ 
+  
+PAGE 6 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+5.5. Stockage de produits frais et congelés 
+ 
+Contrôle des températures de stockage : 
+- Un contrôle journalier des températures est effectué dans les espaces de stockage et le 
+comptoir. 
+- Les températures sont toujours référencées dans les documents de réception des 
+produits. Un tableau indicatif est disponible à l’annexe 4 ci-après. 
+Si l’écart de température est trop important par rapport à celle préconisée lors du stockage, 
+ceux-ci sont retirés des zones de stockages et doivent être jetés. Le document de non-
+conformité est rempli, ainsi que le document de panne si nécessaire (un frigoriste doit être 
+contacté si besoin). Ce document de panne peut consister en un tableau reprenant les 
+informations suivantes : 
+o Nom de la personne qui contrôle la température 
+o Date 
+o Produits concernés (et lot) 
+o Description du problème 
+o Actions entreprises concernant  
+o les produits concernés 
+o et la résolution de la cause du problème. 
+ 
+Les outils de travail doivent être contrôlés tous les ans. 
+ 
+5.6. Produits mis en rayon ou vendus non conformes 
+Si la détection de non-conformité d’un produit a lieu après la mise en rayon des produits : 
+- Si suspicion de produits non conformes après la mise en rayon : les placer directement à 
+l'écart des autres produits et les considérer comme des déchets. Possibilité de les 
+retourner au fournisseur si besoin. 
+- Si les produits ont déjà été commercialisés et qu'il est avéré que ces produits représentent 
+un danger pour la sécurité alimentaire des consommateurs, contacter l'AFSCA et remplir 
+le formulaire « retrait du commerce et rappel » en ligne sur le site de l’AFSCA. 
+- Contacter le fournisseur des produits. 
+- Organiser un rappel des produits vendus du lot concerné et contrôler les autres lots en 
+accord avec le fournisseur et l'AFSCA. L'utilisation du système de traçabilité permet 
+l'identification plus rapide des lots et des clients concernés. 
+- Prévenir les clients par e-mail et en magasin (exemple : via une affiche). 
+- Traiter la cause du problème en recherchant son origine et en cherchant un moyen de le 
+corriger tout en vérifiant s’il n'y a pas d'autres produits concernés. 
+- Remplir le formulaire de non-conformité pour indiquer les causes du problème, les actions 
+correctives mise en œuvre ainsi que les personnes en charge.  
+PAGE 7 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+6. PRÉCAUTIONS PARTICULIÈRES 
+6.1. En cas de plainte de clients 
+ 
+En cas de retour de clients sur un produit défectueux : 
+ 
+1. Noter le retour dans un tableau « plaintes clients » correspondant. Ce tableau pourrait 
+contenir les informations suivantes (pour utilisation interne dans le cadre de la gestion de la 
+plainte uniquement) : 
+o Nom de la personne 
+o Date 
+o Produits concernés (et lot) 
+o Description du problème 
+o Action entreprises 
+ 
+2. Vérifier les autres produits du même lot. 
+ 
+3. Si autres produits défectueux : les renvoyer au fournisseur et compléter le « Formulaire de 
+réclamation fournisseur ». 
+7. PENSE-BÊTE POUR LE RESPONSABLE COMPTOIR  
+7.1. Une fois par jour 
+• Vérifier la DLC (Date Limite de Consommation) des lots en vente 
+o Si DLC valide et éloignée (> 4 jours) : laisser le produit en vente. 
+o Si DLC valide mais proche (≤ 4 jours) : mettre le produit en avant pour le vendre 
+o Si DLC le lendemain : retirer le produit de la vente à la fermeture du magasin, 
+noter son retrait et contacter une organisation d’aide alimentaire (exemple  : 
+Bourse Aux Dons  ou les services d’aide alimentaire connus ) pour assurer une 
+consommation expresse et éviter le gaspillage alimentaire. Jeter le produit s’il ne 
+peut pas être écoulé. 
+• Vérifier les températures dans les espaces de stockage à l’aide d’un thermomètre portable. 
+• Nettoyer le comptoir. 
+• Vérifier tous les contenants du comptoir. Si contenant est vide ou presque : 
+o Remplir avec le stock s’il s’agit du même lot ; 
+o Vider le fond et nettoyer le contenant si 2 lots différents et remplir le cahier de 
+nettoyage. 
+• Nettoyer les ustensiles de découpe et de service. 
+7.2. Une fois par semaine (exemple : tous les mardis) 
+Noter sur un tableur informatique (exemple : Excel, Google Sheets…) l’état des stocks de 
+chaque produit. 
+7.3. Une fois par an 
+S’assurer que tout le matériel est correctement entretenu et que la maintenance est effectuée 
+(chambre froide, outils de découpe…).  
+PAGE 8 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+8. Liens utiles  
+• Guide pour l’instauration d’un système d’autocontrôle pour le commerce de détail en 
+alimentation – AFSCA 
+• Guide d’autocontrôle générique pour le secteur B2C - AFSCA 
+• Guide d’autocontrôle en boucherie-charcuterie – AFSCA 
+• Guide des températures de conservation – AFSCA 
+ 
+   
+PAGE 9 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+ANNEXE 1 :  
+DOCUMENT DE NON-CONFORMITÉ LORS 
+DE LA RÉCEPTION 
+ 
+Date :  / / 
+Personne en charge de la réception des produits : 
+Fournisseur : 
+Lot des produits concernés : 
+ 
+Raison de la non-conformité : 
+ 
+Aspect de l’emballage : 
+ 
+Hygiène du produit concerné à la livraison: 
+ 
+DLC du produit : 
+Température du produit à la livraison: 
+Qualité à la livraison: 
+Poids : 
+Nombre de produits concernés : 
+Action mise en place : 
+Personne en charge de la correction : 
+ 
+ 
+  
+PAGE 10 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+ANNEXE 2 :  
+FORMULAIRE DE RÉCLAMATION FOURNISSEUR :  
+ 
+Date :   / / 
+ 
+Personne et entreprise à l’origine de la réclamation : 
+ 
+Produit concerné : 
+- Nom : 
+- Fournisseur : 
+- Nombre de produits concernés : 
+- Numéro du lot : 
+- DLC/DDM : 
+ 
+Raison de la réclamation (emballage, hygiène, température, DLC/DDM, 
+poids…) : 
+ 
+ 
+ 
+ 
+ 
+ 
+Actions entreprises : 
+ 
+ 
+ 
+Date du traitement de la réclamation : 
+ 
+Signature du responsable :      Date :  / / 
+ 
+ 
+ 
+ 
+   
+PAGE 11 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+ANNEXE 3 :  
+TABLEAU DE NETTOYAGE 
+ 
+Outil/lieu concerné : 
+Date de nettoyage Personne responsable 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+PAGE 12 DE 12 - GUIDE ZÉRO DÉCHET - PROCÉDURES « COMPTOIR PRODUITS FRAIS » - 2021 
+ 
+ANNEXE 4 :  
+LISTE DES DENREES ALIMENTAIRES A 
+REFRIGERER ET CONDITIONS DE 
+TEMPERATURE 
+ 
