@@ -5,6 +5,82 @@ from pathlib import Path
 import json
 import re
 
+try:
+    from azure.identity import ClientSecretCredential, DefaultAzureCredential
+    from azure.storage.filedatalake import DataLakeServiceClient
+except ModuleNotFoundError:
+    raise SystemExit(
+        "SDK Azure manquant: installez 'azure-identity' et 'azure-storage-file-datalake'.\n"
+        "Exemples:\n"
+        "  - pip:    python -m pip install azure-identity azure-storage-file-datalake\n"
+        "  - conda:  conda install -c conda-forge azure-identity azure-storage-file-datalake"
+    )
+
+# ---------- CONFIGURATION ADLS ----------
+# Variables d'environnement attendues:
+# - AZURE_STORAGE_ACCOUNT: nom du compte (sans suffixe .dfs.core.windows.net)
+# - AZURE_STORAGE_KEY: clé de compte (option 1 d'authentification)
+# - STORAGE_FILESYSTEM: nom du file system (ex: 'data')
+# - Option service principal (si pas de STORAGE_KEY):
+#   AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET
+ACCOUNT_NAME = "juridicai"
+ACCOUNT_KEY = os.getenv("AZURE_STORAGE_KEY", "").strip()
+FILESYSTEM = "data"
+
+CLEAN_DIR = "clean_data"
+JSON_FILE = "base_dechets.json"
+# ---------------------------------------
+
+def get_dls_client():
+    """Crée et retourne un client Azure Data Lake Storage"""
+    if not ACCOUNT_NAME or not FILESYSTEM:
+        raise SystemExit("Veuillez définir AZURE_STORAGE_ACCOUNT et STORAGE_FILESYSTEM.")
+    account_url = f"https://{ACCOUNT_NAME}.dfs.core.windows.net"
+
+    if ACCOUNT_KEY:
+        return DataLakeServiceClient(account_url=account_url, credential=ACCOUNT_KEY)
+
+    # Essayer DefaultAzureCredential (Managed Identity / dev env), sinon service principal
+    try:
+        credential = DefaultAzureCredential(exclude_interactive_browser_credential=False)
+        return DataLakeServiceClient(account_url=account_url, credential=credential)
+    except Exception:
+        tenant_id = os.getenv("AZURE_TENANT_ID")
+        client_id = os.getenv("AZURE_CLIENT_ID")
+        client_secret = os.getenv("AZURE_CLIENT_SECRET")
+        if not (tenant_id and client_id and client_secret):
+            raise SystemExit(
+                "Aucun mode d'authentification disponible. Fournissez AZURE_STORAGE_KEY "
+                "ou un service principal (AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET)."
+            )
+        credential = ClientSecretCredential(tenant_id=tenant_id, client_id=client_id, client_secret=client_secret)
+        return DataLakeServiceClient(account_url=account_url, credential=credential)
+
+def list_files_in_adls(file_system_client, directory_path):
+    """Liste tous les fichiers dans un répertoire ADLS"""
+    try:
+        paths_iter = file_system_client.get_paths(path=directory_path)
+        files = []
+        for p in paths_iter:
+            if not p.is_directory and p.name.startswith(directory_path + "/"):
+                files.append(os.path.basename(p.name))
+        return files
+    except Exception:
+        return []
+
+def read_text_from_adls(file_system_client, file_path):
+    """Lit un fichier texte depuis ADLS et retourne son contenu"""
+    try:
+        file_client = file_system_client.get_file_client(file_path)
+        if hasattr(file_client, "read_file"):
+            downloader = file_client.read_file()
+        else:
+            downloader = file_client.download_file()
+        return downloader.readall().decode("utf-8")
+    except Exception as e:
+        print(f"Erreur lors de la lecture: {e}")
+        return None
+
 class RetrievalPipeline:
     def __init__(self):
         # Initialise le modèle SentenceTransformer pour les embeddings de texte
@@ -14,23 +90,29 @@ class RetrievalPipeline:
         self.base_dir = Path(__file__).resolve().parent
         self.project_root = self.base_dir.parent
 
-        # chemin pour le dossier chroma
+        # chemin pour le dossier chroma (local, pas dans ADLS)
         self.db_path = (self.project_root / "data" / "chroma_db").resolve()
         # Crée ou connecte une base de données Chroma persistante au chemin donné
         self.chroma_client = chromadb.PersistentClient(path=str(self.db_path))
         # Récupère ou crée une collection dans la base appelée "law_text"
         self.collection = self.chroma_client.get_or_create_collection(name="law_text")
 
-        #chemin vers clean_data
-        self.data_dir = (self.project_root / "data" / "clean_data").resolve()
+        # Initialiser le client Azure Data Lake Storage
+        self.dls_client = get_dls_client()
+        self.file_system = self.dls_client.get_file_system_client(FILESYSTEM)
+        
+        # Chemins Azure pour les dossiers
+        self.clean_data_dir = CLEAN_DIR
+        self.json_file_path = JSON_FILE
         
     def find_category(self, text):
         # trouve la categorie aproximatif
         
-        json_path = (self.project_root / "data" / "base_dechets.json").resolve()
-        # recupere le dic dans base_dechets.json
-        with open(json_path, mode="r", encoding="utf-8") as f:
-            category = json.load(f)
+        # recupere le dic dans base_dechets.json depuis ADLS
+        json_content = read_text_from_adls(self.file_system, self.json_file_path)
+        if json_content is None:
+            raise SystemExit(f"Impossible de lire {self.json_file_path} depuis ADLS.")
+        category = json.loads(json_content)
         # cree un dic avec les meme cle que l original
         dominent_category = {key:0 for key in category}
         # parcour chaque cle de category
@@ -65,16 +147,26 @@ class RetrievalPipeline:
 
         return chunks
 
-    def index_text(self, file_path):
+    def index_text(self, file_name):
+        """
+        Indexe un fichier texte depuis ADLS
         
-        # Lit le contenu du fichier texte en encodage UTF-8
-        with open(file_path, "r", encoding='utf-8') as text:
-            text_law = text.read()
+        Args:
+            file_name: Nom du fichier dans le dossier clean_data (ex: "document.txt")
+        """
+        # Construit le chemin complet dans ADLS
+        adls_file_path = f"{self.clean_data_dir}/{file_name}"
+        
+        # Lit le contenu du fichier texte depuis ADLS
+        text_law = read_text_from_adls(self.file_system, adls_file_path)
+        if text_law is None:
+            print(f"Erreur: Impossible de lire {file_name} depuis ADLS.")
+            return
 
         # Divise le texte en segments
         chunks = self.chunking(text_law)
-        # Récupère le nom du fichier (sans extension) pour l’utiliser comme identifiant unique
-        file_id = os.path.splitext(os.path.basename(file_path))[0]
+        # Récupère le nom du fichier (sans extension) pour l'utiliser comme identifiant unique
+        file_id = os.path.splitext(file_name)[0]
         
         #essaye de recuperer la date
         pattern = r"(janv|fevr|mars|avr|mai|juin|juil|aout|sept|oct|nov|dec)[\s\-]+[0-9]{4}"
@@ -117,15 +209,14 @@ if __name__ == "__main__":
     # Initialise le pipeline de recherche
     retrieval_pipeline = RetrievalPipeline()
     
-    # Parcourt tous les fichiers texte dans le dossier 'clean_data' et les indexe
-    #base du projet ou ce fichier ce trouve
-    base_dir = Path(__file__).resolve().parent
-    project_root = base_dir.parent
-    #chemin vers clean_data
-    data_dir = (project_root / "data" / "clean_data").resolve()
-
-    file_list = os.listdir(data_dir)
-
-    for file in file_list:
-        file_path = data_dir / file
-        retrieval_pipeline.index_text(file_path)
+    # Parcourt tous les fichiers texte dans le dossier 'clean_data' depuis ADLS et les indexe
+    file_list = list_files_in_adls(retrieval_pipeline.file_system, retrieval_pipeline.clean_data_dir)
+    
+    if not file_list:
+        print(f"Aucun fichier trouvé dans {ACCOUNT_NAME}/{FILESYSTEM}/{retrieval_pipeline.clean_data_dir}/")
+        print("Assurez-vous que les fichiers ont été traités par scrap.py et sont disponibles dans ADLS.")
+    else:
+        print(f"Trouvé {len(file_list)} fichier(s) à indexer dans {ACCOUNT_NAME}/{FILESYSTEM}/{retrieval_pipeline.clean_data_dir}/")
+        for file_name in file_list:
+            print(f"Indexation de: {file_name}")
+            retrieval_pipeline.index_text(file_name)
