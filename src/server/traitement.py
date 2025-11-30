@@ -14,14 +14,12 @@ except ModuleNotFoundError:
         "  - conda:  conda install -c conda-forge azure-identity azure-storage-file-datalake"
     )
 
-# ---------- CONFIGURATION ADLS ----------
 ACCOUNT_NAME = "juridicai"
 ACCOUNT_KEY = os.getenv("AZURE_STORAGE_KEY", "").strip()
 FILESYSTEM = "data"
-# ---------------------------------------
 
 def get_dls_client():
-    """Crée et retourne un client Azure Data Lake Storage"""
+    """Creates and returns an Azure Data Lake Storage client"""
     if not ACCOUNT_NAME or not FILESYSTEM:
         raise SystemExit("Veuillez définir AZURE_STORAGE_ACCOUNT et STORAGE_FILESYSTEM.")
     account_url = f"https://{ACCOUNT_NAME}.dfs.core.windows.net"
@@ -29,7 +27,6 @@ def get_dls_client():
     if ACCOUNT_KEY:
         return DataLakeServiceClient(account_url=account_url, credential=ACCOUNT_KEY)
 
-    # Essayer DefaultAzureCredential (Managed Identity / dev env), sinon service principal
     try:
         credential = DefaultAzureCredential(exclude_interactive_browser_credential=False)
         return DataLakeServiceClient(account_url=account_url, credential=credential)
@@ -46,7 +43,7 @@ def get_dls_client():
         return DataLakeServiceClient(account_url=account_url, credential=credential)
 
 def download_directory(file_system_client, remote_path, local_path):
-    """Télécharge récursivement un dossier depuis ADLS"""
+    """Recursively downloads a directory from ADLS"""
     os.makedirs(local_path, exist_ok=True)
     try:
         paths = file_system_client.get_paths(path=remote_path)
@@ -54,14 +51,11 @@ def download_directory(file_system_client, remote_path, local_path):
             if p.is_directory:
                 continue
             
-            # Reconstruire le chemin local
             relative_path = os.path.relpath(p.name, remote_path)
             local_file_path = os.path.join(local_path, relative_path)
             
-            # Créer les dossiers parents locaux
             os.makedirs(os.path.dirname(local_file_path), exist_ok=True)
             
-            # Télécharger
             file_client = file_system_client.get_file_client(p.name)
             with open(local_file_path, "wb") as f:
                 if hasattr(file_client, "read_file"):
@@ -74,17 +68,12 @@ def download_directory(file_system_client, remote_path, local_path):
         print(f"Info: Impossible de télécharger le dossier (il n'existe peut-être pas encore): {e}")
 
 class RetrievalPipeline:
-    """
-    Version simplifiée pour le serveur API - LECTURE SEULE
-    Pas d'embedding, pas d'indexation, juste la connexion à ChromaDB
-    """
+    """Simplified version for API server - READ ONLY. No embedding, no indexing, just ChromaDB connection"""
+    
     def __init__(self):
-        # Initialiser le client Azure Data Lake Storage
         self.dls_client = get_dls_client()
         self.file_system = self.dls_client.get_file_system_client(FILESYSTEM)
         
-        # --- GESTION CHROMADB SUR ADLS (SYNC - READ ONLY) ---
-        # Utilisation d'un dossier temporaire système
         self.local_db_path = tempfile.mkdtemp(prefix="chroma_db_")
         self.remote_db_path = "chromadb"
         
@@ -92,14 +81,12 @@ class RetrievalPipeline:
         print("[SERVER] Initialisation: Téléchargement de la base Chroma depuis ADLS...")
         download_directory(self.file_system, self.remote_db_path, self.local_db_path)
         
-        # Connecte à la base de données Chroma (lecture seule)
         self.chroma_client = chromadb.PersistentClient(path=self.local_db_path)
-        # Récupère la collection existante
         self.collection = self.chroma_client.get_or_create_collection(name="law_text")
         print(f"[SERVER] Collection chargée avec {self.collection.count()} documents")
 
     def cleanup(self):
-        """Nettoie le dossier temporaire"""
+        """Cleans up the temporary directory"""
         try:
             print(f"[SERVER] Nettoyage: Suppression du dossier temporaire {self.local_db_path}")
             shutil.rmtree(self.local_db_path)

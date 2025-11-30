@@ -1,4 +1,3 @@
-# uvicorn bridge:app --reload --host 127.0.0.1 --port 8000     <--pour lancer en back end sur local
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -15,36 +14,34 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 model = Generation()
 
 class Query(BaseModel):
     query: str
 
-
 @app.post("/search")
-
 def search(data: Query):
+    """Search endpoint that returns AI-generated answers based on document retrieval"""
     print("Requete recue : ", data.query)
-    model_response, results  = model.prompt_augmentation(data.query)
-    # calcule pour avoir un taux de proximite entre 0% et 100%
+    model_response, results = model.prompt_augmentation(data.query)
+    
     distance = results["distances"][0]
     relevance = max(0, (2 - distance[0]) / 2 * 100)
-    # recupere les metadata
+    
     metadatas = results["metadatas"][0]
     metadatas_topics = metadatas[0]
     
     payload = {
-        "results" : [
+        "results": [
             {
-            "id": 1,
-            "title": f"Résultat pour '{data.query}'",
-            "excerpt": model_response,
-            "source": metadatas_topics['source'],
-            "date": date.today().isoformat(),
-            "type": "Réponse IA",
-            "relevance": round(relevance),
-            "link": "#"  
+                "id": 1,
+                "title": f"Résultat pour '{data.query}'",
+                "excerpt": model_response,
+                "source": metadatas_topics['source'],
+                "date": date.today().isoformat(),
+                "type": "Réponse IA",
+                "relevance": round(relevance),
+                "link": "#"  
             }
         ]
     }
