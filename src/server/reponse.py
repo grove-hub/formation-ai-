@@ -1,13 +1,17 @@
 import requests
 import json
+import os
 from query_search import QuerySearch
 
 # envoye et retourne une reponse du model mistral a la question pose par l utilisateur
 # en moyenne 2 a 3min pour chaque réponse
 class Generation:
     def __init__(self):
-        # url du serveur d'ollama sur docker
-        self.url = "http://localhost:11434/api/generate"
+        # url du serveur d'ollama (configurable via env)
+        # Par défaut localhost pour le dev, mais surchargeable pour la prod
+        base_url = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        self.url = f"{base_url}/api/generate"
+        
         # classe des traitement de donne
         self.pipeline = QuerySearch()
 
@@ -46,24 +50,23 @@ class Generation:
         #question et model utiliser
         data = {
             "model":"mistral",
-
-            "prompt": prompt
+            "prompt": prompt,
+            "stream": False
         }
-        # récupere la reponse du serveur
-        with requests.post(self.url, json=data, stream=True) as r:
-            output = ""
-            # la reponse du serveur est 'casse' en plusieru ligne json
-            # parcour chaque ligne pour récuprer le texte
-            for line in r.iter_lines():
-                if line:
-                    chunk = json.loads(line.decode("utf-8"))
-                    if "response" in chunk:
-                        output += chunk["response"]
-                    if chunk.get("done", False):
-                        break
-        # la reponse
-
-        return output, results
+        
+        try:
+            # récupere la reponse du serveur
+            r = requests.post(self.url, json=data)
+            r.raise_for_status()
+            
+            response_json = r.json()
+            output = response_json.get("response", "")
+            
+            return output, results
+            
+        except Exception as e:
+            print(f"Erreur lors de l'appel à Ollama ({self.url}): {e}")
+            return "Désolé, le service de génération de réponse est indisponible pour le moment.", results
 
 if __name__ == "__main__":
     # question de l utilisateur

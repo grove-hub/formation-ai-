@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from .reponse import Generation
+from reponse import Generation
 from datetime import date
 
 app = FastAPI()
