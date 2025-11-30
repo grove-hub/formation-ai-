@@ -49,3 +49,12 @@ def search(data: Query):
     print("Réponse envoyée au front :", payload)
     
     return payload
+
+@app.post("/admin/restart")
+def trigger_restart():
+    """Admin endpoint to restart the API container (called by pipeline after updates)"""
+    import os
+    import signal
+    print("[ADMIN] Restart requested - shutting down to reload data...")
+    os.kill(os.getpid(), signal.SIGTERM)
+    return {"status": "restarting"}

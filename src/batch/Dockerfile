@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-# Copy requirements file
-COPY ../../requirements.txt .
+# Copy requirements file (assumes build from root)
+COPY requirements.txt .
 
 # Install CPU-only PyTorch first (for sentence-transformers)
 RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
@@ -19,11 +19,11 @@ RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy batch processing scripts
-COPY scrap.py .
-COPY traitement.py .
-COPY pipeline.py .
-COPY __init__.py .
+# Copy batch processing scripts (assumes build from root)
+COPY src/batch/scrap.py .
+COPY src/batch/traitement.py .
+COPY src/batch/pipeline.py .
+COPY src/batch/__init__.py .
 
 # Set Python path
 ENV PYTHONPATH=/app
