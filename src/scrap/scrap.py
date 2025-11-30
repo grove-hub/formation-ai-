@@ -165,6 +165,7 @@ class TextScrapper():
             self.soup = ""
 
         self.pdf_urls = []    
+        self.new_files_count = 0 # Compteur de nouveaux fichiers
 
         # Initialiser le client Azure Data Lake Storage
         self.dls_client = get_dls_client()
@@ -331,6 +332,7 @@ class TextScrapper():
                         print(f"    Converti avec succès : {txt_name}")
                         print(f"    Pages : {pages_count} | Caractères : {chars_count:,}\n")
                         success_count += 1
+                        self.new_files_count += 1 # Incrémenter le compteur global
                     else:
                         print(f"    Erreur lors de l'écriture du fichier\n")
                         error_count += 1
