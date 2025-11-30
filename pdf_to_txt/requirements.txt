@@ -1,4 +1,0 @@
-pypdf
-PyPDF2
-azure-identity
-azure-storage-file-datalake
