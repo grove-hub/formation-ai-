@@ -75,7 +75,9 @@ class RetrievalPipeline:
         chunks = self.chunking(text_law)
         # Récupère le nom du fichier (sans extension) pour l’utiliser comme identifiant unique
         file_id = os.path.splitext(os.path.basename(file_path))[0]
-        
+        # ajuster le nom
+        if len(file_id) > 60:
+            file_id = file_id[0:60]+"..."
         #essaye de recuperer la date
         pattern = r"(janv|fevr|mars|avr|mai|juin|juil|aout|sept|oct|nov|dec)[\s\-]+[0-9]{4}"
         # essaye de trouve une date au debut du texte
