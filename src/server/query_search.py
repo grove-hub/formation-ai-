@@ -1,5 +1,5 @@
 from sentence_transformers import SentenceTransformer
-from traitement import RetrievalPipeline
+from db_connexion import RetrievalPipeline
 
 class QuerySearch:
     """Handles semantic search queries against ChromaDB"""
