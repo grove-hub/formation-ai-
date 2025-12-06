@@ -121,15 +121,8 @@ class Generation:
             response_json = r.json()
             output = response_json.get("response", "")
             
-            return output, results, query_subject
+            return output, results
             
         except Exception as e:
             print(f"Erreur lors de l'appel à Ollama ({self.url}): {e}")
             return "Désolé, le service de génération de réponse est indisponible pour le moment.", results
-
-if __name__ == "__main__":
-    query = input("Question: ")
-    generation = Generation()
-    output, result, query_subject = generation.prompt_augmentation(query)
-    print(f"\n Réponse: {output}")
-    print(f"\n Sujets de la question: {query_subject}")
