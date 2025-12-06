@@ -119,7 +119,7 @@ class Generation:
             r.raise_for_status()
             
             response_json = r.json()
-            output = response_json.get("response", "")
+            output = response_json.get("response", "").strip()
             
             return output, results
             
