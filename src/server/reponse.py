@@ -4,7 +4,7 @@ import os
 from query_search import QuerySearch
 
 class Generation:
-    """Handles LLM response generation using Ollama/Mistral"""
+    # Handles LLM response generation using Ollama/Mistral
     
     def __init__(self):
         base_url = os.getenv("OLLAMA_HOST", "http://localhost:11434")
@@ -60,7 +60,7 @@ class Generation:
             response_json = r.json()
             subject_line = response_json.get("response", "").strip()
 
-            # Petit filet de sécurité : si jamais le modèle renvoie "Sujet : XXX"
+            # Petit filet de sécurité : si jamais le modèle renvoie "Sujet : X"
             for prefix in ["Sujet :", "Sujet:", "Ligne de sujet :", "Ligne de sujet:"]:
                 if subject_line.lower().startswith(prefix.lower()):
                     subject_line = subject_line[len(prefix):].strip()
@@ -121,7 +121,7 @@ class Generation:
             response_json = r.json()
             output = response_json.get("response", "")
             
-            return output, results, query_subject
+            return output, results
             
         except Exception as e:
             print(f"Erreur lors de l'appel à Ollama ({self.url}): {e}")
@@ -132,4 +132,3 @@ if __name__ == "__main__":
     generation = Generation()
     output, result, query_subject = generation.prompt_augmentation(query)
     print(f"\n Réponse: {output}")
-    print(f"\n Sujets de la question: {query_subject}")

@@ -21,7 +21,7 @@ class Query(BaseModel):
 
 @app.post("/search")
 def search(data: Query):
-    """Search endpoint that returns AI-generated answers based on document retrieval"""
+    # Search endpoint that returns AI-generated answers based on document retrieval
     print("Requete recue : ", data.query)
     model_response, results = model.prompt_augmentation(data.query)
     
