@@ -119,10 +119,11 @@ class Generation:
             r.raise_for_status()
             
             response_json = r.json()
-            output = response_json.get("response", "")
+            output = response_json.get("response", "").strip()
             
             return output, results
             
         except Exception as e:
             print(f"Erreur lors de l'appel à Ollama ({self.url}): {e}")
+
             return "Désolé, le service de génération de réponse est indisponible pour le moment.", results
