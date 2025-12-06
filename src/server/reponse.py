@@ -126,9 +126,3 @@ class Generation:
         except Exception as e:
             print(f"Erreur lors de l'appel à Ollama ({self.url}): {e}")
             return "Désolé, le service de génération de réponse est indisponible pour le moment.", results
-
-if __name__ == "__main__":
-    query = input("Question: ")
-    generation = Generation()
-    output, result, query_subject = generation.prompt_augmentation(query)
-    print(f"\n Réponse: {output}")
